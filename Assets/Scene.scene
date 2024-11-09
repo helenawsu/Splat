@@ -6,6 +6,7 @@
     - !<own> 597f6fa4-23e5-4230-9e74-1ece142cd000
     - !<own> b9b321cf-4470-487a-a6f5-d8b2b3571347
     - !<own> 1bfb793e-1d85-4e40-886e-1d506e713065
+    - !<own> df6750df-1670-4ee4-a2d8-cf6a16726681
   layers: !<Layers/267ee9a7-aff2-4f9d-9a49-f71214747d03>
     userLayers:
       []
@@ -1139,7 +1140,7 @@
   Layers: 1
   LocalTransform:
     position: {x: 0.000000, y: 0.000000, z: 0.000000}
-    rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    rotation: {x: 0.000000, y: 0.000000, z: 100.000000}
     scale: {x: 1.000000, y: 1.000000, z: 1.000000}
     hasSegmentScaleCompensation: false
   Children:
@@ -1341,6 +1342,23 @@
     bottom: -20.000000
     right: 15.000000
     top: 20.000000
+- !<Image/2077375e-4acf-40e8-a6c1-b5677e7d63a2>
+  PrefabRemaps:
+    []
+  Name: Image
+  Enabled: true
+  RenderOrder: 0
+  StretchMode: Fit
+  VerticalAlignment: Center
+  HorizontalAlignment: Center
+  MeshShadowMode: None
+  ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+  ShadowDensity: 1.000000
+  Materials:
+    - !<reference> 7902897e-0056-4694-ac97-9d8089d9c5bf
+  FlipX: false
+  FlipY: false
+  Pivot: {x: 0.000000, y: 0.000000}
 - !<ScriptComponent/2084bab8-5f86-4659-b05d-12cf1a24ccc2>
   PrefabRemaps:
     []
@@ -7669,6 +7687,21 @@
   ForceCompound: false
   Intangible: false
   ShowCollider: false
+- !<SceneObject/df6750df-1670-4ee4-a2d8-cf6a16726681>
+  PrefabRemaps:
+    []
+  Name: Image
+  Enabled: true
+  Layers: 1
+  LocalTransform:
+    position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    scale: {x: 32.000000, y: 32.000000, z: 32.000000}
+    hasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> 2077375e-4acf-40e8-a6c1-b5677e7d63a2
 - !<SceneObject/e02f5b06-9443-4b8a-a2ba-c4d4f6730f3c>
   PrefabRemaps:
     []
@@ -7697,7 +7730,7 @@
     {}
   ScriptInputs:
     "":
-      targetObject: !<reference.SceneObject> b9b321cf-4470-487a-a6f5-d8b2b3571347
+      targetObject: !<reference.SceneObject> df6750df-1670-4ee4-a2d8-cf6a16726681
       filterEnabled: false
   ScriptTypes:
     "":
