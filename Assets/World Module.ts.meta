@@ -24,14 +24,16 @@
   CurrentVisibility: Editable
   MaxVisibility: Editable
   ScriptInputsHidden:
-    {}
+    filterEnabled: false
+    targetObject: false
   ScriptTypesHidden:
     {}
   DefaultScriptInputs:
-    -
-      {}
+    - targetObject: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      filterEnabled: false
   ScriptTypes:
     -
       {}
   InputLines:
-    []
+    - // @input SceneObject targetObject
+    - // @input bool filterEnabled
