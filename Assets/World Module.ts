@@ -46,6 +46,7 @@ export class NewScript extends BaseScriptComponent {
     if (results === null) {
       this.targetObject.enabled = false;
     } else {
+            
       this.targetObject.enabled = true;
       // get hit information
       const hitPosition = results.position;
@@ -69,6 +70,7 @@ export class NewScript extends BaseScriptComponent {
         this.primaryInteractor.previousTrigger !== InteractorTriggerType.None &&
         this.primaryInteractor.currentTrigger === InteractorTriggerType.None
       ) {
+                print("making a cube");
         // Called when a trigger ends
         // Copy the plane/axis object
         this.sceneObject.copyWholeHierarchy(this.targetObject);
