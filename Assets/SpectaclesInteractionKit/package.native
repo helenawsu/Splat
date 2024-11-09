@@ -2,9 +2,9 @@
   PackagePath: ""
   StudioVersion:
     major: 5
-    minor: 1
-    patch: 0
-    build: 24090603
+    minor: 2
+    patch: 1
+    build: 24102400
     type: Unset
   Description: Release
   SvgIcon: ""
@@ -12,7 +12,7 @@
   VersionMajor: 0
   VersionMinor: 8
   VersionPatch: 2
-  UpdateCheckpoint: 48
+  UpdateCheckpoint: 50
   ExportUid: f31a5ed7-407f-4b3b-b254-f6371f61c1da
   ComponentUid: 0f7a0bbe-777c-41a5-b979-0b0430f25836
   CurrentVisibility: Editable
