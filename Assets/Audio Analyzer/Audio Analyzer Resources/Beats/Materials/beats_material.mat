@@ -1,0 +1,98 @@
+- !<Material/8cfd920f-7289-4f67-bf1c-c3f44bc71020>
+  PackagePath: Audio Analyzer Resources/Beats/Materials/beats_material
+  PassesInfo:
+    - !<own> ea139c16-c736-46b2-8e5e-07c87ac47ee7
+- !<PassInfo/ea139c16-c736-46b2-8e5e-07c87ac47ee7>
+  DepthWrite: true
+  DepthTest: true
+  DepthFunction: LessEqual
+  TwoSided: false
+  ColorMask: {x: true, y: true, z: true, w: true}
+  CullMode: Back
+  PolygonOffset: {x: 0.000000, y: 0.000000}
+  FrustumCulling: Auto
+  FrustumCullPad: 0.000000
+  InstanceCount: 8
+  Defines:
+    - NODE_25_DROPLIST_ITEM 0
+  BlendMode: PremultipliedAlphaAuto
+  Properties:
+    Port_Exponent_N037:
+      typeIdx: 1
+      value: 1.000000
+    Port_Input0_N028:
+      typeIdx: 5
+      value: {x: 1.000000, y: 0.999969, z: 0.999985, w: 1.000000}
+    Port_Input1_N021:
+      typeIdx: 1
+      value: 2.000000
+    Port_Input1_N023:
+      typeIdx: 1
+      value: 1.000000
+    Port_Intensity_N037:
+      typeIdx: 1
+      value: 1.000000
+    Port_Normal_N037:
+      typeIdx: 4
+      value: {x: 0.000000, y: 0.000000, z: 1.000000}
+    Port_Position1_N036:
+      typeIdx: 1
+      value: 0.250000
+    Port_Position2_N036:
+      typeIdx: 1
+      value: 0.430000
+    Port_Value3_N017:
+      typeIdx: 1
+      value: 0.000000
+    PreviewEnabled:
+      typeIdx: 0
+      value: 0
+    PreviewNodeID:
+      typeIdx: 0
+      value: 36
+    baseColor:
+      typeIdx: 5
+      value: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+    color1:
+      typeIdx: 5
+      value: {x: 0.166629, y: 1.000000, z: 0.998901, w: 1.000000}
+    color2:
+      typeIdx: 5
+      value: {x: 0.887602, y: 0.891493, z: 0.342702, w: 1.000000}
+    color3:
+      typeIdx: 5
+      value: {x: 0.994934, y: 0.761166, z: 0.458305, w: 1.000000}
+    color4:
+      typeIdx: 5
+      value: {x: 0.831952, y: 0.466407, z: 0.896559, w: 1.000000}
+    "floatArray[0]":
+      typeIdx: 1
+      value: 0.000000
+    "floatArray[1]":
+      typeIdx: 1
+      value: 0.000000
+    "floatArray[2]":
+      typeIdx: 1
+      value: 0.000000
+    "floatArray[3]":
+      typeIdx: 1
+      value: 0.000000
+    "floatArray[4]":
+      typeIdx: 1
+      value: 0.000000
+    "floatArray[5]":
+      typeIdx: 1
+      value: 0.000000
+    "floatArray[6]":
+      typeIdx: 1
+      value: 0.000000
+    "floatArray[7]":
+      typeIdx: 1
+      value: 0.000000
+    instensity:
+      typeIdx: 1
+      value: 20.000000
+    spacing:
+      typeIdx: 1
+      value: 14.760000
+  Pass: !<reference> b33f04e8-f376-4456-918a-2c4949ac1559

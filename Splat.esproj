@@ -1,9 +1,9 @@
 studioVersion:
   major: 5
-  minor: 1
+  minor: 2
   patch: 1
-  build: 24092500
-updateCheckpoint: 48
+  build: 24102400
+updateCheckpoint: 50
 sceneId: 0a1ccb1a-fe88-4fbb-9883-e3af3c75fd99
 viewConfig:
   simulation:

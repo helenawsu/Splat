@@ -1,0 +1,60 @@
+- !<AssetImportMetadata/c4cd20a5-a7c7-4c85-a92b-55e2a1a2fa57>
+  ImportedAssetIds:
+    JavaScriptAsset: !<reference> f8a21cef-053b-4c43-9978-353beedd6b13
+  ImporterName: JavaScriptAssetImporter
+  PrimaryAsset: !<reference> f8a21cef-053b-4c43-9978-353beedd6b13
+  PackageType: NotAPackage
+  PackagePolicy: CannotBeUnpacked
+  AssetDataMap:
+    JavaScriptAsset: !<own> 83371af2-a02a-47c0-a54d-086843e32693
+  DependentFiles:
+    []
+  ImporterSettings: !<AssetImporterSettings/0668fcbb-0cca-46f1-aa97-d31204cda9ee>
+    {}
+  CompressionSettings: !<own> 00000000-0000-0000-0000-000000000000
+- !<ScriptAssetData/83371af2-a02a-47c0-a54d-086843e32693>
+  SvgIcon: ""
+  Description: ""
+  InternalVersion: 0
+  VersionMajor: 0
+  VersionMinor: 0
+  VersionPatch: 0
+  ComponentUid: 00000000-0000-0000-0000-000000000000
+  ExportUid: 00000000-0000-0000-0000-000000000000
+  CurrentVisibility: Editable
+  MaxVisibility: Editable
+  ScriptInputsHidden:
+    audioComponent: false
+    audioInputScript: false
+    audioTrack: false
+    fftSize: false
+    frameSize: false
+    hopSize: false
+    inputType: false
+    loops: false
+    maxFreq: false
+    microphoneAudio: false
+    minFreq: false
+    numMel: false
+    playAudio: false
+    sampleRate: false
+  ScriptTypesHidden:
+    {}
+  DefaultScriptInputs:
+    - inputType: 1
+      audioTrack: !<reference.AudioTrackAsset> 00000000-0000-0000-0000-000000000000
+      playAudio: false
+      loops: -1
+      microphoneAudio: !<reference.AudioTrackAsset> 00000000-0000-0000-0000-000000000000
+      audioComponent: !<reference.AudioComponent> 00000000-0000-0000-0000-000000000000
+      audioInputScript: !<reference.ScriptComponent> 00000000-0000-0000-0000-000000000000
+      sampleRate: 44100
+      frameSize: 512
+      hopSize: 128
+      fftSize: 2048
+      numMel: 8
+      minFreq: !<float> 0.000000
+      maxFreq: !<float> 12000.000000
+  ScriptTypes:
+    -
+      {}
