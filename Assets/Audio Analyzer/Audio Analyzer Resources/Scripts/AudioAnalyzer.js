@@ -362,7 +362,7 @@ function analyzeAudioAndSplat() {
     var bands = getBands();
     var numBands = getNumMel();
     
-    //print("bands ==========")
+    print("bands ==========")
     //for (var i = 0 ; i < numBands; i++) {
       //  print(bands[i])
        // print(melToHz(bands[i]))
