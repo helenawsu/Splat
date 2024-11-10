@@ -507,7 +507,7 @@
 - !<SceneObject/0b1a514f-e38f-4aad-b598-40b0d1287871>
   PrefabRemaps:
     []
-  Name: paint sfx
+  Name: paint sfx1
   Enabled: true
   Layers: 1
   LocalTransform:
@@ -992,6 +992,23 @@
     bottom: 0.000000
     right: 0.000000
     top: 0.000000
+- !<AudioComponent/15d86e9f-446f-4223-bc08-f4e5dbedbfc9>
+  PrefabRemaps:
+    []
+  Name: Audio
+  Enabled: true
+  AudioTrack: !<reference> 5a4236a1-6e5c-4e9b-9d59-5249fa5c7d3c
+  EnableAutoplayLoop: false
+  Volume: 1.000000
+  EnableMixToSnap: false
+  RecordVolume: 1.000000
+  EnableSpatialAudio: true
+  EnableDistanceEffect: true
+  CurveType: Logarithm
+  MinDistance: 0.000000
+  MaxDistance: 100.000000
+  EnableDirectivityEffect: true
+  EnablePositionEffect: true
 - !<RenderMeshVisual/16cd76f0-1724-4a83-b0b8-dd92d3c8e6f9>
   PrefabRemaps:
     []
@@ -1196,13 +1213,16 @@
     scale: {x: 1.000000, y: 1.000000, z: 1.000000}
     hasSegmentScaleCompensation: false
   Children:
-    - !<own> 0b1a514f-e38f-4aad-b598-40b0d1287871
     - !<own> bf144280-8677-446f-8993-37599d4460da
     - !<own> 5b17790b-7fda-4177-a039-3e665240ddc6
     - !<own> 9092f1ee-9721-4860-8e62-ae79fb7124c9
     - !<own> fc202d85-8c15-40d4-b75c-c67cbd4b830c
     - !<own> bdaf7291-51f1-4ea8-850d-2259cf51edd9
     - !<own> b91c2f06-2be0-43cf-bfd7-b96cf4700e2b
+    - !<own> 0b1a514f-e38f-4aad-b598-40b0d1287871
+    - !<own> 50e02301-4829-45d7-b6ec-24e5760a3073
+    - !<own> 70b52af8-fe4d-464f-bcc2-179c99e6c17b
+    - !<own> 87e564c0-a7c1-49f1-9958-9ae1cc8453ab
   Components:
     - !<own> e0bce4ab-525e-4b48-a9f3-6d38c5ada597
 - !<ScreenTransform/1c71035f-f003-4f71-ab11-7081594b173d>
@@ -2729,6 +2749,23 @@
   ScriptTypes:
     "":
       {}
+- !<AudioComponent/4743e8ca-559d-4846-999e-862f15e359d1>
+  PrefabRemaps:
+    []
+  Name: Audio
+  Enabled: true
+  AudioTrack: !<reference> 889feb77-df7b-4457-bd80-9110eecb7101
+  EnableAutoplayLoop: false
+  Volume: 1.000000
+  EnableMixToSnap: false
+  RecordVolume: 1.000000
+  EnableSpatialAudio: true
+  EnableDistanceEffect: true
+  CurveType: Logarithm
+  MinDistance: 0.000000
+  MaxDistance: 100.000000
+  EnableDirectivityEffect: true
+  EnablePositionEffect: true
 - !<SceneObject/4746ff75-3280-458f-b58b-c56140263168>
   PrefabRemaps:
     []
@@ -3102,6 +3139,22 @@
     - !<own> be24bd1d-2398-4c43-b15a-b95da3154b68
   Components:
     []
+- !<SceneObject/50e02301-4829-45d7-b6ec-24e5760a3073>
+  PrefabRemaps:
+    []
+  Name: paint sfx2
+  Enabled: true
+  Layers: 1
+  LocalTransform:
+    position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    rotation: {x: 0.000000, y: -0.000000, z: 0.000000}
+    scale: {x: 0.000000, y: 0.000000, z: 0.000000}
+    hasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> b6379def-e6a8-44f3-839a-3ab23f41b7bf
+    - !<own> 755a738a-4c5d-463a-80d3-cfdc0205d29e
 - !<ScriptComponent/518a56fe-84cc-457a-ac44-665f19946cf7>
   PrefabRemaps:
     []
@@ -4616,6 +4669,22 @@
     - !<own> 2f145aeb-3474-4801-9be9-a9e670ea1d99
     - !<own> 11e595bb-7f1c-4c88-8a83-08c31cf823c9
     - !<own> fb8a80a0-d97b-4e5e-96f1-9fa72137c74e
+- !<SceneObject/70b52af8-fe4d-464f-bcc2-179c99e6c17b>
+  PrefabRemaps:
+    []
+  Name: paint sfx3
+  Enabled: true
+  Layers: 1
+  LocalTransform:
+    position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    rotation: {x: 0.000000, y: -0.000000, z: 0.000000}
+    scale: {x: 0.000000, y: 0.000000, z: 0.000000}
+    hasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> 4743e8ca-559d-4846-999e-862f15e359d1
+    - !<own> ff309630-4aff-4eb0-baf8-8a3f1742e35b
 - !<ScriptComponent/722d84a6-169a-4b3d-a104-fb2b2ce2388d>
   PrefabRemaps:
     []
@@ -4668,6 +4737,22 @@
   ScriptInputs:
     "":
       {}
+  ScriptTypes:
+    "":
+      {}
+- !<ScriptComponent/755a738a-4c5d-463a-80d3-cfdc0205d29e>
+  PrefabRemaps:
+    []
+  Name: Untitled TypeScript
+  Enabled: true
+  ScriptAsset: !<reference> 62a61a33-3f19-46cf-8eac-1a3cf3b29f13
+  ScriptInputsDefault:
+    {}
+  ScriptTypesDefault:
+    {}
+  ScriptInputs:
+    "":
+      audio: !<reference.AudioComponent> b6379def-e6a8-44f3-839a-3ab23f41b7bf
   ScriptTypes:
     "":
       {}
@@ -5370,6 +5455,22 @@
     - !<own> ea03a9df-99a0-4d21-8db4-7f1682632c57
     - !<own> 06ba1261-3a2b-4dde-af0a-10377f085a2f
     - !<own> 4ca82509-b617-45ff-876c-30e74a3ed333
+- !<SceneObject/87e564c0-a7c1-49f1-9958-9ae1cc8453ab>
+  PrefabRemaps:
+    []
+  Name: paint sfx4
+  Enabled: true
+  Layers: 1
+  LocalTransform:
+    position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    rotation: {x: 0.000000, y: -0.000000, z: 0.000000}
+    scale: {x: 0.000000, y: 0.000000, z: 0.000000}
+    hasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> 15d86e9f-446f-4223-bc08-f4e5dbedbfc9
+    - !<own> cdaa4523-eb87-4d5f-a718-8baa082db034
 - !<ScriptComponent/884c37c0-f1a6-492a-9885-ab598c52d642>
   PrefabRemaps:
     []
@@ -5832,7 +5933,7 @@
     []
   Name: Audio
   Enabled: true
-  AudioTrack: !<reference> c13512d2-cb2d-43ec-a9c5-d8780a512b38
+  AudioTrack: !<reference> c3a3997a-230d-4642-88eb-100e00c75fa7
   EnableAutoplayLoop: false
   Volume: 1.000000
   EnableMixToSnap: false
@@ -6775,6 +6876,23 @@
   ScriptTypes:
     "":
       {}
+- !<AudioComponent/b6379def-e6a8-44f3-839a-3ab23f41b7bf>
+  PrefabRemaps:
+    []
+  Name: Audio
+  Enabled: true
+  AudioTrack: !<reference> 6676e64c-9907-4f18-ade0-678c7b4e019b
+  EnableAutoplayLoop: false
+  Volume: 1.000000
+  EnableMixToSnap: false
+  RecordVolume: 1.000000
+  EnableSpatialAudio: true
+  EnableDistanceEffect: true
+  CurveType: Logarithm
+  MinDistance: 0.000000
+  MaxDistance: 100.000000
+  EnableDirectivityEffect: true
+  EnablePositionEffect: true
 - !<SceneObject/b660dca1-2c7a-49f5-b93b-d20fa87a627f>
   PrefabRemaps:
     []
@@ -7586,6 +7704,22 @@
   ScriptTypes:
     "":
       {}
+- !<ScriptComponent/cdaa4523-eb87-4d5f-a718-8baa082db034>
+  PrefabRemaps:
+    []
+  Name: Untitled TypeScript
+  Enabled: true
+  ScriptAsset: !<reference> 62a61a33-3f19-46cf-8eac-1a3cf3b29f13
+  ScriptInputsDefault:
+    {}
+  ScriptTypesDefault:
+    {}
+  ScriptInputs:
+    "":
+      audio: !<reference.AudioComponent> 15d86e9f-446f-4223-bc08-f4e5dbedbfc9
+  ScriptTypes:
+    "":
+      {}
 - !<SceneObject/cf3bc4e4-ebc8-4bba-9fa6-b51856e9947d>
   PrefabRemaps:
     []
@@ -8022,6 +8156,7 @@
   ScriptAsset: !<reference> db6c3ee4-bf6e-4ef4-a7f7-0e5273acbef9
   ScriptInputsDefault:
     filterEnabled: true
+    handTracking: true
   ScriptTypesDefault:
     {}
   ScriptInputs:
@@ -8034,7 +8169,7 @@
       splatObject6: !<reference.SceneObject> b91c2f06-2be0-43cf-bfd7-b96cf4700e2b
       filterEnabled: false
       audioAnalyzer: !<reference.ScriptComponent> b005ef03-8d9b-4bba-9231-63f7b28cc071
-      handTracking: !<reference.ScriptComponent> 8e3379ab-20ec-4f05-91bd-fdd777a10359
+      handTracking: !<reference.ScriptComponent> 00000000-0000-0000-0000-000000000000
       audio: !<reference.AudioComponent> 958898eb-3edb-4162-b1cd-fbdf44614d68
   ScriptTypes:
     "":
@@ -9370,6 +9505,22 @@
     CapitalizationOverride: None
     CapitilizationOverride: None
   DepthTest: false
+- !<ScriptComponent/ff309630-4aff-4eb0-baf8-8a3f1742e35b>
+  PrefabRemaps:
+    []
+  Name: Untitled TypeScript
+  Enabled: true
+  ScriptAsset: !<reference> 62a61a33-3f19-46cf-8eac-1a3cf3b29f13
+  ScriptInputsDefault:
+    {}
+  ScriptTypesDefault:
+    {}
+  ScriptInputs:
+    "":
+      audio: !<reference.AudioComponent> 4743e8ca-559d-4846-999e-862f15e359d1
+  ScriptTypes:
+    "":
+      {}
 - !<ScriptComponent/ff9e0a86-595c-49b9-84fd-e9010ba679d5>
   PrefabRemaps:
     []

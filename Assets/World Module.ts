@@ -18,6 +18,7 @@ export class NewScript extends BaseScriptComponent {
   private tick;
   private soundCooldown;
   private targetObject: SceneObject;
+  private splatSFX: AudioComponent;
 
   @input
   splatObject1: SceneObject;
@@ -33,6 +34,15 @@ export class NewScript extends BaseScriptComponent {
   splatObject6: SceneObject;
 
   @input
+  splatSFX1: AudioComponent;
+  @input
+  splatSFX2: AudioComponent;
+  @input
+  splatSFX3: AudioComponent;
+  @input
+  splatSFX4: AudioComponent;
+
+  @input
   filterEnabled: boolean;
     
   @input
@@ -40,9 +50,6 @@ export class NewScript extends BaseScriptComponent {
   
   @input
   handTracking: ScriptComponent;
-  @input
-  audio: AudioComponent;
-
 
   getRandomSplatObject() {
     // Generate a random integer between 1 and 6
@@ -67,11 +74,30 @@ export class NewScript extends BaseScriptComponent {
     }
   }
 
+  getRandomSplatSFX() {
+    // Generate a random integer between 1 and 4
+    const randomIndex = Math.floor(Math.random() * 4) + 1;
+
+    // Return the corresponding splat sound effect based on the random number
+    switch (randomIndex) {
+        case 1:
+            return this.splatSFX1;
+        case 2:
+            return this.splatSFX2;
+        case 3:
+            return this.splatSFX3;
+        case 4:
+            return this.splatSFX4;
+        default:
+            return this.splatSFX1; // Fallback in case of any issues
+    }
+  }
 
   onAwake() {
 
     this.soundCooldown = 0;
     this.targetObject = this.getRandomSplatObject();
+    this.splatSFX = this.getRandomSplatSFX();
 
     this.tick = 0;
 
@@ -85,7 +111,11 @@ export class NewScript extends BaseScriptComponent {
     // disable target object when surface is not detected
     this.targetObject.enabled = false;
 
-    this.audio.playbackMode = Audio.PlaybackMode.LowLatency;
+    // init sound effects
+    this.splatSFX1.playbackMode = Audio.PlaybackMode.LowLatency;
+    this.splatSFX2.playbackMode = Audio.PlaybackMode.LowLatency;
+    this.splatSFX3.playbackMode = Audio.PlaybackMode.LowLatency;
+    this.splatSFX4.playbackMode = Audio.PlaybackMode.LowLatency;
     //this.audio.playbackMode = Audio.PlaybackMode.LowPower;
 
     // create update event
@@ -132,19 +162,25 @@ export class NewScript extends BaseScriptComponent {
       if (
         strength > 0.6 && this.soundCooldown < 0
       ) {
+
+
+        // init sound effects
+        this.splatSFX.spatialAudio.enabled = true;
+        this.splatSFX.spatialAudio.positionEffect.enabled = true;
+        this.splatSFX.spatialAudio.directivityEffect.enabled = true;
         
-        print("blah");
+        this.splatSFX.play(1); // Play the sound once
         this.soundCooldown = 20;
+        
         // Called when a trigger ends
         // Copy the plane/axis object
-        this.audio.spatialAudio.enabled = true;
-        this.audio.spatialAudio.positionEffect.enabled = true;
-        this.audio.play(1); // Play the sound once
-        
         this.sceneObject.copyWholeHierarchy(this.targetObject);
+        this.targetObject = this.getRandomSplatObject();
+        this.splatSFX = this.getRandomSplatSFX();
       }
     }
   }
+
   calculateDistance(vecA, vecB) {
     const dx = vecB.x - vecA.x;
     const dy = vecB.y - vecA.y;
