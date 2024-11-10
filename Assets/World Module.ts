@@ -83,8 +83,8 @@ export class NewScript extends BaseScriptComponent {
     // disable target object when surface is not detected
     this.targetObject.enabled = false;
 
-    //this.audio.playbackMode = Audio.PlaybackMode.LowLatency;
-    this.audio.playbackMode = Audio.PlaybackMode.LowPower;
+    this.audio.playbackMode = Audio.PlaybackMode.LowLatency;
+    //this.audio.playbackMode = Audio.PlaybackMode.LowPower;
 
     // create update event
     this.createEvent('UpdateEvent').bind(this.onUpdate.bind(this));
@@ -137,12 +137,7 @@ export class NewScript extends BaseScriptComponent {
         // Copy the plane/axis object
         this.audio.spatialAudio.enabled = true;
         this.audio.spatialAudio.positionEffect.enabled = true;
-        //this.audio.spatialAudio.positionEffect.effectType = Audio.PositionEffectType.Directional;
-        //this.audio.spatialAudio. = this.targetObject.getTransform().getWorldPosition();
         this.audio.play(1); // Play the sound once
-
-        //this.audio.fadeOutTime = 1;
-        //this.audio.stop(true);  // true for fade out
         
         this.sceneObject.copyWholeHierarchy(this.targetObject);
       }
