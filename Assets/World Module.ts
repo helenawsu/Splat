@@ -45,6 +45,9 @@ export class NewScript extends BaseScriptComponent {
   @input
   splatSFX4: AudioComponent;
   private prevSFXIndex: number;
+  
+  @input
+  paintDropsVFX: VFXAsset;
 
   @input
   filterEnabled: boolean;
@@ -88,6 +91,7 @@ export class NewScript extends BaseScriptComponent {
         default:
             return this.splatObject1; // Fallback in case of any issues
     }
+       
   }
 
     getRandomSplatSFX() {
@@ -116,7 +120,6 @@ export class NewScript extends BaseScriptComponent {
   }
 
   onAwake() {
-
     this.soundCooldown = 0;
     this.targetObject = this.getRandomSplatObject();
     this.splatSFX = this.getRandomSplatSFX();
@@ -191,21 +194,59 @@ export class NewScript extends BaseScriptComponent {
       //set position and rotation
       this.targetObject.getTransform().setWorldPosition(hitPosition);
       this.targetObject.getTransform().setWorldRotation(toRotation);
-      this.targetObject.getTransform().setWorldScale(new vec3(50, 50, 50));
-      var strength = (this.audioAnalyzer as any).getStrength();
-      //print(this.soundCooldown);
-      //print("sssttrrreeennngtthhhh"+ strength);
-      if (
-        strength > 0.6 && this.soundCooldown < 0
-      ) {
-        this.splatSFX = this.getRandomSplatSFX();
 
+      var avgStrength = 0;
+      for (let i = 0; i < this.lastStrengths.length; i++) {
+        avgStrength += this.lastStrengths[i];
+      }
+
+      avgStrength /= this.lastStrengths.length;
+
+
+      function smoothQuadraticScale(avgStrength) {
+        let adjustedStrength;
+        
+        if (avgStrength <= 0.2) {
+            // Minimal growth for avgStrength between 0 and 0.2
+            adjustedStrength = avgStrength * 0.1;  // Scale down the effect drastically
+        } else {
+            // Quadratic scaling for avgStrength between 0.2 and 1
+            let normalizedStrength = (avgStrength - 0.2) / 0.8;  // Normalizes to 0-1 in the 0.2-1 range
+            adjustedStrength = 0.02 + normalizedStrength * normalizedStrength;  // Apply quadratic scaling
+        }
+    
+        // Map to the desired range
+        return 40 + adjustedStrength * 20;
+    }
+    
+    var SCALE = smoothQuadraticScale(avgStrength);
+    
+      this.targetObject.getTransform().setWorldScale(new vec3(SCALE, SCALE, SCALE));
+      var instantaneousStrength = (this.audioAnalyzer as any).getStrength();
+      print(this.soundCooldown);
+      print("Avg Strength" + avgStrength);
+      // if (
+      //   instantaneousStrength > 0.6 && this.soundCooldown < 0
+      // ) 
+      if (
+        this.primaryInteractor.previousTrigger !== InteractorTriggerType.None &&
+        this.primaryInteractor.currentTrigger === InteractorTriggerType.None
+      )
+      {
         this.splatSFX.play(1); // Play the sound once
         this.soundCooldown = 20;
         
         // Called when a trigger ends
         // Copy the plane/axis object
-        this.sceneObject.copyWholeHierarchy(this.targetObject);
+        const newSplat = this.sceneObject.copyWholeHierarchy(this.targetObject);
+        newSplat.getChild(0).enabled = true;
+        this.delayedCallback(0.5, () => {
+                    newSplat.getChild(0).enabled = false
+                })
+        // Get child (particle system) default disabled
+        // enable its attributes
+        // re-disable after 0.2 seconds
+        // print(this.paintDropsVFX.properties.getTypeName())      
         this.targetObject = this.getRandomSplatObject();
         this.splatSFX = this.getRandomSplatSFX();
       }
@@ -248,6 +289,13 @@ export class NewScript extends BaseScriptComponent {
     }
         
     return new vec4(r, g, b, 1)
+  }
+    
+  delayedCallback(delay, callback) {
+        var event = this.createEvent("DelayedCallbackEvent");
+        event.bind(callback);
+        event.reset(delay);
+        return event;
   }
   
   onUpdate() {
@@ -341,7 +389,7 @@ export class NewScript extends BaseScriptComponent {
       );
       const rayStart = rayStartOffset;
       const rayEnd = this.primaryInteractor.endPoint;
-      var indexpos = (this.handTracking as any).getIndexPos();
+      // var indexpos = (this.handTracking as any).getIndexPos();
       this.hitTestSession.hitTest(
         rayStart,
         rayEnd,

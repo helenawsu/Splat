@@ -27,6 +27,7 @@
     audioAnalyzer: false
     filterEnabled: false
     handTracking: false
+    paintDropsVFX: false
     splatObject1: false
     splatObject2: false
     splatObject3: false
@@ -41,13 +42,8 @@
     {}
   DefaultScriptInputs:
     - filterEnabled: false
-      splatObject1: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
-      splatObject2: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
-      splatObject3: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
-      splatObject4: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
-      splatObject5: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
-      splatObject6: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
       audioAnalyzer: !<reference.ScriptComponent> 00000000-0000-0000-0000-000000000000
+      paintDropsVFX: !<reference.VFXAsset> 00000000-0000-0000-0000-000000000000
       handTracking: !<reference.ScriptComponent> 00000000-0000-0000-0000-000000000000
       splatSFX1: !<reference.AudioComponent> 00000000-0000-0000-0000-000000000000
       splatSFX2: !<reference.AudioComponent> 00000000-0000-0000-0000-000000000000
@@ -67,6 +63,7 @@
     - // @input Component.AudioComponent splatSFX2
     - // @input Component.AudioComponent splatSFX3
     - // @input Component.AudioComponent splatSFX4
+    - // @input Asset.VFXAsset paintDropsVFX
     - // @input bool filterEnabled
     - // @input Component.ScriptComponent audioAnalyzer
     - // @input Component.ScriptComponent handTracking

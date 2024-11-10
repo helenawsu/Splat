@@ -23,10 +23,10 @@ function onStart() {
     'Component.ObjectTracking3D'
   );
   objectTracking3DComponent.trackingAsset = script.rightHand;
-  objectTracking3DComponent.addAttachmentPoint(
-    'index-3_end_end_end',
-    script.visualSceneObject
-  );
+  // objectTracking3DComponent.addAttachmentPoint(
+  //   'index-3_end_end_end',
+  //   script.visualSceneObject
+  // );
   // Add print callbacks for whenever these hands pinch.
   // leftHand.onPinchDown.add(() => {
   //   print(
@@ -101,7 +101,7 @@ script.getIndexPos = function() {
 }
 onAwake();
 function enterGun() {
-  visualSceneObject.enabled = true;
+  // visualSceneObject.enabled = true;
   print(
     `making a gun.`
   );
