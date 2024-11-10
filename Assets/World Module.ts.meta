@@ -26,7 +26,6 @@
   ScriptInputsHidden:
     audio: false
     filterEnabled: false
-    hi: false
     targetObject: false
   ScriptTypesHidden:
     {}
