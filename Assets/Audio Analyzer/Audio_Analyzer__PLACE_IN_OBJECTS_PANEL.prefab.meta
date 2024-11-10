@@ -33,7 +33,7 @@
     {}
   ScriptInputs:
     "":
-      inputType: 1
+      inputType: 2
       audioTrack: !<reference.AudioTrackAsset> 1fb755d2-25f7-4ee3-a80c-e5c8deabc5e6
       playAudio: true
       loops: -1

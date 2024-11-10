@@ -41,7 +41,7 @@
   ScriptTypesHidden:
     {}
   DefaultScriptInputs:
-    - inputType: 1
+    - inputType: 2
       audioTrack: !<reference.AudioTrackAsset> 00000000-0000-0000-0000-000000000000
       playAudio: false
       loops: -1
