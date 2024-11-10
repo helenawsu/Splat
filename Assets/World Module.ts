@@ -128,7 +128,7 @@ export class NewScript extends BaseScriptComponent {
       print(this.soundCooldown);
       print("sssttrrreeennngtthhhh"+ strength);
       if (
-        strength > 0.4 && this.soundCooldown < 0
+        strength > 0.6 && this.soundCooldown < 0
       ) {
         
         print("blah");
@@ -193,12 +193,12 @@ export class NewScript extends BaseScriptComponent {
 
     //@input SceneObject targetObject
 
-    var renderMeshVisual = this.targetObject.getComponent("Component.RenderMeshVisual");
-    if (renderMeshVisual) {
-        var newMaterial = renderMeshVisual.mainMaterial.clone();
-        newMaterial.mainPass.baseColor = new vec4(Math.sin(this.tick / 100), 1.0, 1.0, 1.0);
-        renderMeshVisual.mainMaterial = newMaterial;
-    }
+    // var renderMeshVisual = this.targetObject.getComponent("Component.RenderMeshVisual");
+    // if (renderMeshVisual) {
+    //     var newMaterial = renderMeshVisual.mainMaterial.clone();
+    //     newMaterial.mainPass.baseColor = new vec4(Math.sin(this.tick / 100), 1.0, 1.0, 1.0);
+    //     renderMeshVisual.mainMaterial = newMaterial;
+    // }
 
     this.primaryInteractor =
       SIK.InteractionManager.getTargetingInteractors().shift();
