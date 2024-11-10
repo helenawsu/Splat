@@ -27,6 +27,7 @@
     audio: false
     audioAnalyzer: false
     filterEnabled: false
+    paintDropsVFX: false
     splatObject1: false
     splatObject2: false
     splatObject3: false
@@ -39,6 +40,7 @@
     - filterEnabled: false
       audio: !<reference.AudioComponent> 00000000-0000-0000-0000-000000000000
       audioAnalyzer: !<reference.ScriptComponent> 00000000-0000-0000-0000-000000000000
+      paintDropsVFX: !<reference.VFXAsset> 00000000-0000-0000-0000-000000000000
   ScriptTypes:
     -
       {}
@@ -49,6 +51,7 @@
     - // @input SceneObject splatObject4
     - // @input SceneObject splatObject5
     - // @input SceneObject splatObject6
+    - // @input Asset.VFXAsset paintDropsVFX
     - // @input bool filterEnabled
     - // @input Component.ScriptComponent audioAnalyzer
     - // @input Component.AudioComponent audio

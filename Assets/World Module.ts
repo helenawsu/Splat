@@ -31,6 +31,9 @@ export class NewScript extends BaseScriptComponent {
   splatObject5: SceneObject;
   @input
   splatObject6: SceneObject;
+  
+  @input
+  paintDropsVFX: VFXAsset;
 
   @input
   filterEnabled: boolean;
@@ -63,11 +66,11 @@ export class NewScript extends BaseScriptComponent {
         default:
             return this.splatObject1; // Fallback in case of any issues
     }
+       
   }
 
 
   onAwake() {
-
     this.soundCooldown = 0;
     this.targetObject = this.getRandomSplatObject();
 
@@ -125,8 +128,8 @@ export class NewScript extends BaseScriptComponent {
       this.targetObject.getTransform().setWorldRotation(toRotation);
       this.targetObject.getTransform().setWorldScale(new vec3(50, 50, 50));
       var strength = (this.audioAnalyzer as any).getStrength();
-      print(this.soundCooldown);
-      print("sssttrrreeennngtthhhh"+ strength);
+      // print(this.soundCooldown);
+      // print("sssttrrreeennngtthhhh"+ strength);
       if (
         strength > 0.6 && this.soundCooldown < 0
       ) {
@@ -139,7 +142,15 @@ export class NewScript extends BaseScriptComponent {
         this.audio.spatialAudio.positionEffect.enabled = true;
         this.audio.play(1); // Play the sound once
         
-        this.sceneObject.copyWholeHierarchy(this.targetObject);
+        const newSplat = this.sceneObject.copyWholeHierarchy(this.targetObject);
+        newSplat.getChild(0).enabled = true;
+        this.delayedCallback(0.5, () => {
+                    newSplat.getChild(0).enabled = false
+                })
+        // Get child (particle system) default disabled
+        // enable its attributes
+        // re-disable after 0.2 seconds
+        // print(this.paintDropsVFX.properties.getTypeName())      
       }
     }
   }
@@ -179,6 +190,13 @@ export class NewScript extends BaseScriptComponent {
     }
         
     return new vec4(r, g, b, 1)
+  }
+    
+  delayedCallback(delay, callback) {
+        var event = this.createEvent("DelayedCallbackEvent");
+        event.bind(callback);
+        event.reset(delay);
+        return event;
   }
   
   onUpdate() {
@@ -232,7 +250,11 @@ export class NewScript extends BaseScriptComponent {
       const strength = (this.audioAnalyzer as any).getStrength();
       const hue_float = (this.audioAnalyzer as any).getHue();
             
-      if (strength > 0) {
+      if (strength > 0.6) { // || this.tick % 100 == 0) {
+//        this.targetObject.getChild(0).enabled = true
+//        this.delayedCallback(1, () => {
+//                    this.targetObject.getChild(0).enabled = false
+//                })       
         const hue = this.hsvToRgb(this.hueFloatToHsv(hue_float));
         var preVisual = this.targetObject.getComponent("Component.RenderMeshVisual");
         var newMat = preVisual.mainMaterial.clone(); 
