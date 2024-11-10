@@ -9,6 +9,7 @@ const EPSILON = 0.01;
 import { HandInteractor } from "SpectaclesInteractionKit/Core/HandInteractor/HandInteractor";
 import { SIK } from './SpectaclesInteractionKit/SIK';
 
+
 @component
 export class NewScript extends BaseScriptComponent {
   private primaryInteractor;
@@ -97,7 +98,7 @@ export class NewScript extends BaseScriptComponent {
         //                      print(
         //        `The left hand has pinched. The tip of the left index finger is: ${this.hi.hand.indexTip.position}.`
         //      );
-        this.sceneObject.copyWholeHierarchy(this.targetObject);
+        var new_splat = this.sceneObject.copyWholeHierarchy(this.targetObject);
       }
     }
   }
@@ -108,6 +109,23 @@ export class NewScript extends BaseScriptComponent {
 
     return Math.sqrt(dx * dx + dy * dy + dz * dz);
 }
+    
+ shootSplat() {
+     const rayStartOffset = new vec3(
+        this.primaryInteractor.startPoint.x,
+        this.primaryInteractor.startPoint.y,
+        this.primaryInteractor.startPoint.z + 30
+      );
+      const rayStart = rayStartOffset;
+      const rayEnd = this.primaryInteractor.endPoint;
+
+      this.hitTestSession.hitTest(
+        rayStart,
+        rayEnd,
+        this.onHitTestResult.bind(this)
+      );
+}
+  
   onUpdate() {
     this.primaryInteractor =
       SIK.InteractionManager.getTargetingInteractors().shift();
@@ -143,19 +161,7 @@ export class NewScript extends BaseScriptComponent {
       this.primaryInteractor.isActive() &&
       this.primaryInteractor.isTargeting()
     ) {
-      const rayStartOffset = new vec3(
-        this.primaryInteractor.startPoint.x,
-        this.primaryInteractor.startPoint.y,
-        this.primaryInteractor.startPoint.z + 30
-      );
-      const rayStart = rayStartOffset;
-      const rayEnd = this.primaryInteractor.endPoint;
-
-      this.hitTestSession.hitTest(
-        rayStart,
-        rayEnd,
-        this.onHitTestResult.bind(this)
-      );
+      this.shootSplat();
     } else {
       this.targetObject.enabled = false;
     }
