@@ -25,6 +25,7 @@
   MaxVisibility: Editable
   ScriptInputsHidden:
     audio: false
+    audioAnalyzer: false
     filterEnabled: false
     targetObject: false
   ScriptTypesHidden:
@@ -33,10 +34,12 @@
     - targetObject: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
       filterEnabled: false
       audio: !<reference.AudioComponent> 00000000-0000-0000-0000-000000000000
+      audioAnalyzer: !<reference.ScriptComponent> 00000000-0000-0000-0000-000000000000
   ScriptTypes:
     -
       {}
   InputLines:
     - // @input SceneObject targetObject
     - // @input bool filterEnabled
+    - // @input Component.ScriptComponent audioAnalyzer
     - // @input Component.AudioComponent audio
