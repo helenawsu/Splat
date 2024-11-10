@@ -159,10 +159,15 @@ export class NewScript extends BaseScriptComponent {
       var strength = (this.audioAnalyzer as any).getStrength();
       print(this.soundCooldown);
       print("sssttrrreeennngtthhhh"+ strength);
+      // if (
+      //   strength > 0.6 && this.soundCooldown < 0
+      // ) 
       if (
-        strength > 0.6 && this.soundCooldown < 0
-      ) {
-
+        this.primaryInteractor.previousTrigger !== InteractorTriggerType.None &&
+        this.primaryInteractor.currentTrigger === InteractorTriggerType.None
+      )
+      {
+        
 
         // init sound effects
         this.splatSFX.spatialAudio.enabled = true;
@@ -285,7 +290,7 @@ export class NewScript extends BaseScriptComponent {
       );
       const rayStart = rayStartOffset;
       const rayEnd = this.primaryInteractor.endPoint;
-      var indexpos = (this.handTracking as any).getIndexPos();
+      // var indexpos = (this.handTracking as any).getIndexPos();
       this.hitTestSession.hitTest(
         rayStart,
         rayEnd,
