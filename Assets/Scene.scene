@@ -502,6 +502,22 @@
   BlendNormals: false
   BlendShapes:
     {}
+- !<SceneObject/0b1a514f-e38f-4aad-b598-40b0d1287871>
+  PrefabRemaps:
+    []
+  Name: paint sfx
+  Enabled: true
+  Layers: 1
+  LocalTransform:
+    position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    hasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> 958898eb-3edb-4162-b1cd-fbdf44614d68
+    - !<own> 7d4d71e8-98b9-4c6e-a9f4-22e8610838d3
 - !<RenderMeshVisual/0b839546-feb0-4486-bd77-ccd82da5a112>
   PrefabRemaps:
     []
@@ -1144,6 +1160,7 @@
     hasSegmentScaleCompensation: false
   Children:
     - !<own> bf144280-8677-446f-8993-37599d4460da
+    - !<own> 0b1a514f-e38f-4aad-b598-40b0d1287871
   Components:
     - !<own> e0bce4ab-525e-4b48-a9f3-6d38c5ada597
 - !<ScreenTransform/1c71035f-f003-4f71-ab11-7081594b173d>
@@ -4707,6 +4724,22 @@
   BlendNormals: false
   BlendShapes:
     {}
+- !<ScriptComponent/7d4d71e8-98b9-4c6e-a9f4-22e8610838d3>
+  PrefabRemaps:
+    []
+  Name: Untitled TypeScript
+  Enabled: true
+  ScriptAsset: !<reference> 62a61a33-3f19-46cf-8eac-1a3cf3b29f13
+  ScriptInputsDefault:
+    {}
+  ScriptTypesDefault:
+    {}
+  ScriptInputs:
+    "":
+      audio: !<reference.AudioComponent> 958898eb-3edb-4162-b1cd-fbdf44614d68
+  ScriptTypes:
+    "":
+      {}
 - !<SceneObject/7d6ae339-177b-4e14-bf6b-ca73b8a6f5bb>
   PrefabRemaps:
     []
@@ -5635,6 +5668,23 @@
   ScriptTypes:
     "":
       {}
+- !<AudioComponent/958898eb-3edb-4162-b1cd-fbdf44614d68>
+  PrefabRemaps:
+    []
+  Name: Audio
+  Enabled: true
+  AudioTrack: !<reference> c13512d2-cb2d-43ec-a9c5-d8780a512b38
+  EnableAutoplayLoop: false
+  Volume: 1.000000
+  EnableMixToSnap: false
+  RecordVolume: 1.000000
+  EnableSpatialAudio: true
+  EnableDistanceEffect: true
+  CurveType: Logarithm
+  MinDistance: 0.000000
+  MaxDistance: 100.000000
+  EnableDirectivityEffect: true
+  EnablePositionEffect: true
 - !<ScreenTransform/95c14adc-87b7-4dbf-966d-9df0dfef0064>
   PrefabRemaps:
     []
@@ -7730,7 +7780,7 @@
     "":
       targetObject: !<reference.SceneObject> bf144280-8677-446f-8993-37599d4460da
       filterEnabled: false
-      hi: !<MappingBased.HandInteractor> 24cf881f-0af4-45c8-97a1-e8d6a7511d5a
+      audio: !<reference.AudioComponent> 958898eb-3edb-4162-b1cd-fbdf44614d68
   ScriptTypes:
     "":
       {}
