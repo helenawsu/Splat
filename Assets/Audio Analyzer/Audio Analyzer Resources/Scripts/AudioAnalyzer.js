@@ -56,6 +56,9 @@ for (var i = 0; i < numMel; i++) {
 }
 var average = new Float32Array(1);
 
+var g_strength = 0;
+var g_hue = 0;
+
 // audio input 
 
 var audioInput;
@@ -329,11 +332,6 @@ script.api.setInput = setInput;
 // =================== do not modify what's above!!!!!! =================== \\
 
 
-// custom shit
-function splat(strength, hue) {
-    print(strength + " " + hue);
-}
-
 function melToHz(mel) {
     return 700 * (Math.pow(10, mel / 2595) - 1);
 }
@@ -357,12 +355,20 @@ function melToNoteValue(bands, numBands) {
 
   return normalizedNoteValue;
 }
-// Custom function to analyze audio and map strength and hue
-function analyzeAudioAndSplat() {
+
+script.getStrength = function() {
+    return g_strength;
+}
+
+script.getHue = function() {
+    return g_hue;
+}
+
+function updateStrengthAndHue() {
     var bands = getBands();
     var numBands = getNumMel();
     
-    print("bands ==========")
+    // print("bands ==========")
     //for (var i = 0 ; i < numBands; i++) {
       //  print(bands[i])
        // print(melToHz(bands[i]))
@@ -375,9 +381,9 @@ function analyzeAudioAndSplat() {
     // Calculate the hue based on the center frequency (pitch)
     var hue = melToNoteValue(bands, numBands);
 
-    // Call the splat function with the calculated strength and hue
-    splat(strength, hue);
+    g_strength = strength;
+    g_hue = hue;
 }
 
 // Schedule the function to run on a frame update event
-script.createEvent("UpdateEvent").bind(analyzeAudioAndSplat);
+script.createEvent("UpdateEvent").bind(updateStrengthAndHue);

@@ -6,6 +6,7 @@
     - !<own> 597f6fa4-23e5-4230-9e74-1ece142cd000
     - !<own> 1bfb793e-1d85-4e40-886e-1d506e713065
     - !<own> 598de98d-e999-4651-847f-e7bae477a600
+    - !<own> 724f0b74-4d1d-4340-9207-f668aa2f5e6a
   layers: !<Layers/267ee9a7-aff2-4f9d-9a49-f71214747d03>
     userLayers:
       []
@@ -4513,6 +4514,21 @@
   ScriptTypes:
     "":
       {}
+- !<SceneObject/724f0b74-4d1d-4340-9207-f668aa2f5e6a>
+  PrefabRemaps:
+    []
+  Name: AudioAnalyzer
+  Enabled: true
+  Layers: 1
+  LocalTransform:
+    position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    hasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> a5fbc245-48c1-4ed4-b20c-ad8ec8ec1996
 - !<SceneObject/732acdae-935a-4246-9369-aa21ee3e4a01>
   PrefabRemaps:
     []
@@ -5776,48 +5792,6 @@
     bottom: -16.000000
     right: 0.000000
     top: 16.000000
-- !<ScriptComponent/9685dbca-2233-42a3-a711-ca1321f879c5>
-  PrefabRemaps:
-    []
-  Name: AudioAnalyzer
-  Enabled: true
-  ScriptAsset: !<reference> 9d24e00c-1606-4ad1-8726-57fe051518c9
-  ScriptInputsDefault:
-    inputType: true
-    audioTrack: true
-    playAudio: true
-    loops: true
-    microphoneAudio: true
-    audioComponent: true
-    audioInputScript: true
-    sampleRate: true
-    frameSize: true
-    hopSize: true
-    fftSize: true
-    numMel: true
-    minFreq: true
-    maxFreq: true
-  ScriptTypesDefault:
-    {}
-  ScriptInputs:
-    "":
-      inputType: 2
-      audioTrack: !<reference.AudioTrackAsset> 00000000-0000-0000-0000-000000000000
-      playAudio: false
-      loops: -1
-      microphoneAudio: !<reference.AudioTrackAsset> 00000000-0000-0000-0000-000000000000
-      audioComponent: !<reference.AudioComponent> 00000000-0000-0000-0000-000000000000
-      audioInputScript: !<reference.ScriptComponent> 00000000-0000-0000-0000-000000000000
-      sampleRate: 44100
-      frameSize: 512
-      hopSize: 128
-      fftSize: 2048
-      numMel: 8
-      minFreq: !<float> 0.000000
-      maxFreq: !<float> 12000.000000
-  ScriptTypes:
-    "":
-      {}
 - !<ScriptComponent/9692a40e-2bb7-4725-adcc-06fe3d1bafb7>
   PrefabRemaps:
     []
@@ -6107,6 +6081,47 @@
   Components:
     - !<own> acbcbff6-eecf-4ebe-9fd5-91e7811fe8ca
     - !<own> fe4ee68b-14f6-482b-984b-ab140636ed94
+- !<ScriptComponent/a5fbc245-48c1-4ed4-b20c-ad8ec8ec1996>
+  PrefabRemaps:
+    []
+  Name: AudioAnalyzer
+  Enabled: true
+  ScriptAsset: !<reference> 9d24e00c-1606-4ad1-8726-57fe051518c9
+  ScriptInputsDefault:
+    inputType: true
+    audioTrack: true
+    playAudio: true
+    loops: true
+    audioComponent: true
+    audioInputScript: true
+    sampleRate: true
+    frameSize: true
+    hopSize: true
+    fftSize: true
+    numMel: true
+    minFreq: true
+    maxFreq: true
+  ScriptTypesDefault:
+    {}
+  ScriptInputs:
+    "":
+      inputType: 2
+      audioTrack: !<reference.AudioTrackAsset> 00000000-0000-0000-0000-000000000000
+      playAudio: false
+      loops: -1
+      microphoneAudio: !<reference.AudioTrackAsset> 7b5fea66-d886-4d83-9c55-a834f6bd3df6
+      audioComponent: !<reference.AudioComponent> 00000000-0000-0000-0000-000000000000
+      audioInputScript: !<reference.ScriptComponent> 00000000-0000-0000-0000-000000000000
+      sampleRate: 44100
+      frameSize: 512
+      hopSize: 128
+      fftSize: 2048
+      numMel: 8
+      minFreq: !<float> 0.000000
+      maxFreq: !<float> 12000.000000
+  ScriptTypes:
+    "":
+      {}
 - !<SceneObject/a677b29a-6a93-490a-8df1-19b2ca301293>
   PrefabRemaps:
     []
@@ -6928,119 +6943,6 @@
   ScriptTypes:
     "":
       {}
-- !<ScriptComponent/bf94e5db-c836-45b8-a0d1-e23f97d5d5ef>
-  PrefabRemaps:
-    []
-  Name: AudioAnalyzerHelper
-  Enabled: true
-  ScriptAsset: !<reference> e393f829-e382-44e1-ba71-22408eee6989
-  ScriptInputsDefault:
-    bandType: true
-    index: true
-    smoothType: true
-    step: true
-    lerpCoef: true
-    responseType: true
-    transformObject: true
-    transformType: true
-    local: true
-    transformMode: true
-    startVec3Transform: true
-    endVec3Transform: true
-    offset: true
-    meshWithBlendshapes: true
-    blendshapeName: true
-    startWeight: true
-    endWeight: true
-    asset: true
-    parameter: true
-    assetValueType: true
-    startAssetFloat: true
-    endAssetFloat: true
-    startAssetVec2: true
-    endAssetVec2: true
-    startAssetVec3: true
-    endAssetVec3: true
-    startAssetVec4: true
-    endAssetVec4: true
-    startAssetRGB: true
-    endAssetRGB: true
-    startAssetRGBA: true
-    endAssetRGBA: true
-    startAssetRect: true
-    endAssetRect: true
-    scriptWithApi: true
-    functionName: true
-    valueType: true
-    startFloat: true
-    endFloat: true
-    startVec2: true
-    endVec2: true
-    startVec3: true
-    endVec3: true
-    startVec4: true
-    endVec4: true
-    startRGB: true
-    endRGB: true
-    startRGBA: true
-    endRGBA: true
-  ScriptTypesDefault:
-    {}
-  ScriptInputs:
-    "":
-      audioAnalyzerScript: !<reference.ScriptComponent> 9685dbca-2233-42a3-a711-ca1321f879c5
-      bandType: 0
-      index: 0
-      smoothType: 0
-      step: 0.500000
-      lerpCoef: 0.500000
-      responseType: 0
-      transformObject: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
-      transformType: Position
-      local: false
-      transformMode: 0
-      startVec3Transform: !<Vec3> {x: 0.000000, y: 0.000000, z: 0.000000}
-      endVec3Transform: !<Vec3> {x: 1.000000, y: 1.000000, z: 1.000000}
-      offset: !<Vec3> {x: 1.000000, y: 1.000000, z: 1.000000}
-      meshWithBlendshapes: !<reference.RenderMeshVisual> 00000000-0000-0000-0000-000000000000
-      blendshapeName: ""
-      startWeight: !<float> 0.000000
-      endWeight: !<float> 1.000000
-      asset: !<reference.Asset> 00000000-0000-0000-0000-000000000000
-      parameter: ""
-      assetValueType: 0
-      startAssetFloat: !<float> 0.000000
-      endAssetFloat: !<float> 1.000000
-      startAssetVec2: !<Vec2> {x: 0.000000, y: 0.000000}
-      endAssetVec2: !<Vec2> {x: 1.000000, y: 1.000000}
-      startAssetVec3: !<Vec3> {x: 0.000000, y: 0.000000, z: 0.000000}
-      endAssetVec3: !<Vec3> {x: 1.000000, y: 1.000000, z: 1.000000}
-      startAssetVec4: !<Vec4> {x: 0.000000, y: 0.000000, z: 0.000000, w: 0.000000}
-      endAssetVec4: !<Vec4> {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
-      startAssetRGB: !<Vec3> {x: 0.000000, y: 0.000000, z: 0.000000}
-      endAssetRGB: !<Vec3> {x: 1.000000, y: 1.000000, z: 1.000000}
-      startAssetRGBA: !<Vec4> {x: 0.000000, y: 0.000000, z: 0.000000, w: 1.000000}
-      endAssetRGBA: !<Vec4> {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
-      startAssetRect: !<Vec4> {x: -1.000000, y: 1.000000, z: -1.000000, w: 1.000000}
-      endAssetRect: !<Vec4> {x: -1.000000, y: 1.000000, z: -1.000000, w: 1.000000}
-      scriptWithApi: !<reference.ScriptComponent> 00000000-0000-0000-0000-000000000000
-      functionName: updateValueFunc
-      valueType: 0
-      startFloat: !<float> 0.000000
-      endFloat: !<float> 1.000000
-      startVec2: !<Vec2> {x: 0.000000, y: 0.000000}
-      endVec2: !<Vec2> {x: 1.000000, y: 1.000000}
-      startVec3: !<Vec3> {x: 0.000000, y: 0.000000, z: 0.000000}
-      endVec3: !<Vec3> {x: 1.000000, y: 1.000000, z: 1.000000}
-      startVec4: !<Vec4> {x: 0.000000, y: 0.000000, z: 0.000000, w: 0.000000}
-      endVec4: !<Vec4> {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
-      startRGB: !<Vec3> {x: 0.000000, y: 0.000000, z: 0.000000}
-      endRGB: !<Vec3> {x: 1.000000, y: 1.000000, z: 1.000000}
-      startRGBA: !<Vec4> {x: 0.000000, y: 0.000000, z: 0.000000, w: 1.000000}
-      endRGBA: !<Vec4> {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
-  ScriptTypes:
-    "":
-      {}
 - !<ScriptComponent/c008992d-99eb-45d6-b9b5-22e9d24cec4b>
   PrefabRemaps:
     []
@@ -7454,21 +7356,6 @@
   ScriptTypes:
     "":
       {}
-- !<SceneObject/cc76b290-3c04-4c0f-b2d7-60c9d4800ff1>
-  PrefabRemaps:
-    []
-  Name: AudioAnalyzer
-  Enabled: true
-  Layers: 1
-  LocalTransform:
-    position: {x: 0.000000, y: 0.000000, z: 0.000000}
-    rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
-    scale: {x: 1.000000, y: 1.000000, z: 1.000000}
-    hasSegmentScaleCompensation: false
-  Children:
-    []
-  Components:
-    - !<own> 9685dbca-2233-42a3-a711-ca1321f879c5
 - !<SceneObject/ccfcd7b3-7092-44cb-a951-e8f477545426>
   PrefabRemaps:
     []
@@ -7508,21 +7395,6 @@
   ScriptTypes:
     "":
       {}
-- !<SceneObject/cdc97912-bfe0-4aeb-b7ea-261a2e3be92a>
-  PrefabRemaps:
-    []
-  Name: AudioAnalyzerHelper
-  Enabled: false
-  Layers: 1
-  LocalTransform:
-    position: {x: 0.000000, y: 0.000000, z: 0.000000}
-    rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
-    scale: {x: 1.000000, y: 1.000000, z: 1.000000}
-    hasSegmentScaleCompensation: false
-  Children:
-    []
-  Components:
-    - !<own> bf94e5db-c836-45b8-a0d1-e23f97d5d5ef
 - !<SceneObject/cf3bc4e4-ebc8-4bba-9fa6-b51856e9947d>
   PrefabRemaps:
     []
@@ -7965,6 +7837,7 @@
     "":
       targetObject: !<reference.SceneObject> bf144280-8677-446f-8993-37599d4460da
       filterEnabled: false
+      audioAnalyzer: !<reference.ScriptComponent> a5fbc245-48c1-4ed4-b20c-ad8ec8ec1996
       audio: !<reference.AudioComponent> 958898eb-3edb-4162-b1cd-fbdf44614d68
   ScriptTypes:
     "":

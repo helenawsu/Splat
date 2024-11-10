@@ -23,6 +23,9 @@ export class NewScript extends BaseScriptComponent {
   filterEnabled: boolean;
     
   @input
+  audioAnalyzer: ScriptComponent
+    
+  @input
   audio: AudioComponent;
 
   onAwake() {
@@ -110,22 +113,6 @@ export class NewScript extends BaseScriptComponent {
     return Math.sqrt(dx * dx + dy * dy + dz * dz);
 }
     
- shootSplat() {
-     const rayStartOffset = new vec3(
-        this.primaryInteractor.startPoint.x,
-        this.primaryInteractor.startPoint.y,
-        this.primaryInteractor.startPoint.z + 30
-      );
-      const rayStart = rayStartOffset;
-      const rayEnd = this.primaryInteractor.endPoint;
-
-      this.hitTestSession.hitTest(
-        rayStart,
-        rayEnd,
-        this.onHitTestResult.bind(this)
-      );
-}
-  
   onUpdate() {
     this.primaryInteractor =
       SIK.InteractionManager.getTargetingInteractors().shift();
@@ -156,13 +143,29 @@ export class NewScript extends BaseScriptComponent {
               );
         }
       }
+        
+     // update audio
     if (
       this.primaryInteractor &&
       this.primaryInteractor.isActive() &&
       this.primaryInteractor.isTargeting()
     ) {
-      this.shootSplat();
-    } else {
+      const strength = (this.audioAnalyzer as any).getStrength();
+      const hue = (this.audioAnalyzer as any).getHue();
+     const rayStartOffset = new vec3(
+        this.primaryInteractor.startPoint.x,
+        this.primaryInteractor.startPoint.y,
+        this.primaryInteractor.startPoint.z + 30
+      );
+      const rayStart = rayStartOffset;
+      const rayEnd = this.primaryInteractor.endPoint;
+
+      this.hitTestSession.hitTest(
+        rayStart,
+        rayEnd,
+        this.onHitTestResult.bind(this)
+      );
+        } else {
       this.targetObject.enabled = false;
     }
   }
