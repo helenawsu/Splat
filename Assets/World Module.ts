@@ -90,29 +90,29 @@ export class NewScript extends BaseScriptComponent {
     }
   }
 
-  getRandomSplatSFX() {
-    // Generate a random integer between 1 and 4
-    var randomIndex = Math.floor(Math.random() * 4) + 1;
-    
-    if (randomIndex === this.prevSFXIndex) {
-      randomIndex = (randomIndex + 1) % 4;
-
-    this.prevSFXIndex = randomIndex;
-
-    // Return the corresponding splat sound effect based on the random number
-    switch (randomIndex) {
-        case 0:
-            return this.splatSFX1;
-        case 1:
-            return this.splatSFX2;
-        case 2:
-            return this.splatSFX3;
-        case 3:
-            return this.splatSFX4;
-        default:
-            return this.splatSFX1; // Fallback in case of any issues
+    getRandomSplatSFX() {
+      // Generate a random integer between 1 and 4
+      let randomIndex = Math.floor(Math.random() * 4) + 1;
+      
+      if (randomIndex === this.prevSFXIndex) {
+          randomIndex = (randomIndex % 4) + 1;
       }
-    }
+
+      this.prevSFXIndex = randomIndex;
+
+      // Return the corresponding splat sound effect based on the random number
+      switch (randomIndex) {
+          case 1:
+              return this.splatSFX1;
+          case 2:
+              return this.splatSFX2;
+          case 3:
+              return this.splatSFX3;
+          case 4:
+              return this.splatSFX4;
+          default:
+              return this.splatSFX1; // Fallback in case of any issues
+      }
   }
 
   onAwake() {
@@ -199,9 +199,8 @@ export class NewScript extends BaseScriptComponent {
         strength > 0.6 && this.soundCooldown < 0
       ) {
         this.splatSFX = this.getRandomSplatSFX();
-        //print(this.splatSFX);
-        // init sound effects
-        this.splatSFX1.play(1); // Play the sound once
+
+        this.splatSFX.play(1); // Play the sound once
         this.soundCooldown = 20;
         
         // Called when a trigger ends
