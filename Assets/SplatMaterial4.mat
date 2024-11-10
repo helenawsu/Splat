@@ -1,0 +1,97 @@
+- !<Material/dba569b2-f6ab-4c5a-ab84-9b2a2eb484b1>
+  PackagePath: ""
+  PassesInfo:
+    - !<own> bed0d2e3-7ecc-4e09-850f-39d52d639ab9
+- !<PassInfo/bed0d2e3-7ecc-4e09-850f-39d52d639ab9>
+  DepthWrite: false
+  DepthTest: false
+  DepthFunction: LessEqual
+  TwoSided: false
+  ColorMask: {x: true, y: true, z: true, w: true}
+  CullMode: Back
+  PolygonOffset: {x: 0.000000, y: 0.000000}
+  FrustumCulling: Auto
+  FrustumCullPad: 0.000000
+  InstanceCount: 1
+  Defines:
+    - NODE_13_DROPLIST_ITEM 0
+    - NODE_49_DROPLIST_ITEM 0
+    - NODE_69_DROPLIST_ITEM 0
+    - ENABLE_BASE_TEX
+    - NODE_27_DROPLIST_ITEM 0
+    - ENABLE_OPACITY_TEX
+  BlendMode: PremultipliedAlphaAuto
+  Properties:
+    PreviewEnabled:
+      typeIdx: 0
+      value: 0
+    baseColor:
+      typeIdx: 5
+      value: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+    baseTex:
+      typeIdx: 9
+      value:
+        id: 689c79ad-c838-4852-852c-cddcf29593a6
+        sampler:
+          filteringMode: Trilinear
+          wrapModeU: ClampToEdge
+          wrapModeV: ClampToEdge
+          wrapModeW: ClampToEdge
+          borderColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+          mipmaps: false
+        type: Texture2D
+    baseTexBorderColor:
+      typeIdx: 5
+      value: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+    baseTexDims:
+      typeIdx: 5
+      value: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+    baseTexTransform:
+      typeIdx: 7
+      value:
+        0: {x: 1.000000, y: 0.000000, z: 0.000000}
+        1: {x: 0.000000, y: 1.000000, z: 0.000000}
+        2: {x: 0.000000, y: 0.000000, z: 1.000000}
+    baseTexUvMinMax:
+      typeIdx: 5
+      value: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+    opacityMul:
+      typeIdx: 1
+      value: 1.000000
+    opacityTex:
+      typeIdx: 9
+      value:
+        id: 990b405d-f195-499c-a85c-036edc507133
+        sampler:
+          filteringMode: Trilinear
+          wrapModeU: Repeat
+          wrapModeV: Repeat
+          wrapModeW: Repeat
+          borderColor: {x: 0.000000, y: 0.000000, z: 0.000000, w: 0.000000}
+          mipmaps: false
+        type: Texture2D
+    opacityTexBorderColor:
+      typeIdx: 5
+      value: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+    opacityTexDims:
+      typeIdx: 5
+      value: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+    opacityTexTransform:
+      typeIdx: 7
+      value:
+        0: {x: 1.000000, y: 0.000000, z: 0.000000}
+        1: {x: 0.000000, y: 1.000000, z: 0.000000}
+        2: {x: 0.000000, y: 0.000000, z: 1.000000}
+    opacityTexUvMinMax:
+      typeIdx: 5
+      value: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+    overrideTimeDelta:
+      typeIdx: 1
+      value: 0.000000
+    overrideTimeElapsed:
+      typeIdx: 1
+      value: 0.000000
+    overrideTimeEnabled:
+      typeIdx: 0
+      value: 0
+  Pass: !<reference> 3118f6f0-e423-49a5-b907-c445b5c5b4e4

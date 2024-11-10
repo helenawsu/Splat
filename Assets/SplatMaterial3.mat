@@ -1,8 +1,8 @@
-- !<Material/7902897e-0056-4694-ac97-9d8089d9c5bf>
+- !<Material/99e9f44c-dd09-4b96-bb42-d81d83ae934f>
   PackagePath: ""
   PassesInfo:
-    - !<own> 3ae20ded-1fd0-4fb8-a7c6-8d9dbc0c5793
-- !<PassInfo/3ae20ded-1fd0-4fb8-a7c6-8d9dbc0c5793>
+    - !<own> ba80d917-217c-462f-a5af-473afb02bb11
+- !<PassInfo/ba80d917-217c-462f-a5af-473afb02bb11>
   DepthWrite: false
   DepthTest: false
   DepthFunction: LessEqual
@@ -61,7 +61,7 @@
     opacityTex:
       typeIdx: 9
       value:
-        id: bf62b26a-f561-46b2-9ab4-0b2121e98c22
+        id: 1979d582-6030-4865-9195-c3205a89618b
         sampler:
           filteringMode: Trilinear
           wrapModeU: Repeat
