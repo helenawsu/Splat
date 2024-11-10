@@ -27,6 +27,7 @@
     audio: false
     audioAnalyzer: false
     filterEnabled: false
+    handTracking: false
     splatObject1: false
     splatObject2: false
     splatObject3: false
@@ -39,6 +40,7 @@
     - filterEnabled: false
       audio: !<reference.AudioComponent> 00000000-0000-0000-0000-000000000000
       audioAnalyzer: !<reference.ScriptComponent> 00000000-0000-0000-0000-000000000000
+      handTracking: !<reference.ScriptComponent> 00000000-0000-0000-0000-000000000000
   ScriptTypes:
     -
       {}
@@ -51,4 +53,5 @@
     - // @input SceneObject splatObject6
     - // @input bool filterEnabled
     - // @input Component.ScriptComponent audioAnalyzer
+    - // @input Component.ScriptComponent handTracking
     - // @input Component.AudioComponent audio

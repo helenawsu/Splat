@@ -36,8 +36,10 @@ export class NewScript extends BaseScriptComponent {
   filterEnabled: boolean;
     
   @input
-  audioAnalyzer: ScriptComponent
-    
+  audioAnalyzer: ScriptComponent;
+  
+  @input
+  handTracking: ScriptComponent;
   @input
   audio: AudioComponent;
 
@@ -247,7 +249,7 @@ export class NewScript extends BaseScriptComponent {
       );
       const rayStart = rayStartOffset;
       const rayEnd = this.primaryInteractor.endPoint;
-
+      var indexpos = (this.handTracking as any).getIndexPos();
       this.hitTestSession.hitTest(
         rayStart,
         rayEnd,

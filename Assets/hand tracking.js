@@ -93,6 +93,12 @@ function onUpdate() {
 script.getIsGun = function() {
   return isGun;
 }
+script.getIndexPos = function() {
+  SIK.InteractionManager.getTargetingInteractors().shift();
+  let handInputData = SIK.HandInputData;
+  let rightHand = handInputData.getHand('right');
+  return  rightHand.indexTip.position;
+}
 onAwake();
 function enterGun() {
   visualSceneObject.enabled = true;

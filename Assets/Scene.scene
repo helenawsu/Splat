@@ -8034,6 +8034,7 @@
       splatObject6: !<reference.SceneObject> b91c2f06-2be0-43cf-bfd7-b96cf4700e2b
       filterEnabled: false
       audioAnalyzer: !<reference.ScriptComponent> b005ef03-8d9b-4bba-9231-63f7b28cc071
+      handTracking: !<reference.ScriptComponent> 8e3379ab-20ec-4f05-91bd-fdd777a10359
       audio: !<reference.AudioComponent> 958898eb-3edb-4162-b1cd-fbdf44614d68
   ScriptTypes:
     "":
