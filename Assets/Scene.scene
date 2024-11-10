@@ -2820,7 +2820,7 @@
   PrefabRemaps:
     []
   Name: "[EXAMPLES] Interaction"
-  Enabled: true
+  Enabled: false
   Layers: 1
   LocalTransform:
     position: {x: 0.000000, y: 0.000000, z: 0.000000}
@@ -8156,7 +8156,6 @@
   ScriptAsset: !<reference> db6c3ee4-bf6e-4ef4-a7f7-0e5273acbef9
   ScriptInputsDefault:
     filterEnabled: true
-    handTracking: true
   ScriptTypesDefault:
     {}
   ScriptInputs:
@@ -8167,10 +8166,13 @@
       splatObject4: !<reference.SceneObject> fc202d85-8c15-40d4-b75c-c67cbd4b830c
       splatObject5: !<reference.SceneObject> bdaf7291-51f1-4ea8-850d-2259cf51edd9
       splatObject6: !<reference.SceneObject> b91c2f06-2be0-43cf-bfd7-b96cf4700e2b
+      splatSFX1: !<reference.AudioComponent> 958898eb-3edb-4162-b1cd-fbdf44614d68
+      splatSFX2: !<reference.AudioComponent> b6379def-e6a8-44f3-839a-3ab23f41b7bf
+      splatSFX3: !<reference.AudioComponent> 4743e8ca-559d-4846-999e-862f15e359d1
+      splatSFX4: !<reference.AudioComponent> 15d86e9f-446f-4223-bc08-f4e5dbedbfc9
       filterEnabled: false
       audioAnalyzer: !<reference.ScriptComponent> b005ef03-8d9b-4bba-9231-63f7b28cc071
-      handTracking: !<reference.ScriptComponent> 00000000-0000-0000-0000-000000000000
-      audio: !<reference.AudioComponent> 958898eb-3edb-4162-b1cd-fbdf44614d68
+      handTracking: !<reference.ScriptComponent> 8e3379ab-20ec-4f05-91bd-fdd777a10359
   ScriptTypes:
     "":
       {}

@@ -19,6 +19,9 @@ export class NewScript extends BaseScriptComponent {
   private soundCooldown;
   private targetObject: SceneObject;
   private splatSFX: AudioComponent;
+  private lastPitches: number[] = [];
+  private lastStrengths: number[] = [];
+  private MAX_LENGTH = 20;
 
   @input
   splatObject1: SceneObject;
@@ -41,6 +44,7 @@ export class NewScript extends BaseScriptComponent {
   splatSFX3: AudioComponent;
   @input
   splatSFX4: AudioComponent;
+  private prevSFXIndex: number;
 
   @input
   filterEnabled: boolean;
@@ -50,6 +54,18 @@ export class NewScript extends BaseScriptComponent {
   
   @input
   handTracking: ScriptComponent;
+
+
+  insertAtFront(value: number, arr: number[]) {
+    // Insert the new element at the front
+    arr.unshift(value);
+
+    // If the array exceeds the max length, remove the last element
+    if (arr.length > this.MAX_LENGTH) {
+        arr.pop();
+    }
+  }
+
 
   getRandomSplatObject() {
     // Generate a random integer between 1 and 6
@@ -76,20 +92,26 @@ export class NewScript extends BaseScriptComponent {
 
   getRandomSplatSFX() {
     // Generate a random integer between 1 and 4
-    const randomIndex = Math.floor(Math.random() * 4) + 1;
+    var randomIndex = Math.floor(Math.random() * 4) + 1;
+    
+    if (randomIndex === this.prevSFXIndex) {
+      randomIndex = (randomIndex + 1) % 4;
+
+    this.prevSFXIndex = randomIndex;
 
     // Return the corresponding splat sound effect based on the random number
     switch (randomIndex) {
-        case 1:
+        case 0:
             return this.splatSFX1;
-        case 2:
+        case 1:
             return this.splatSFX2;
-        case 3:
+        case 2:
             return this.splatSFX3;
-        case 4:
+        case 3:
             return this.splatSFX4;
         default:
             return this.splatSFX1; // Fallback in case of any issues
+      }
     }
   }
 
@@ -112,10 +134,24 @@ export class NewScript extends BaseScriptComponent {
     this.targetObject.enabled = false;
 
     // init sound effects
+    
     this.splatSFX1.playbackMode = Audio.PlaybackMode.LowLatency;
     this.splatSFX2.playbackMode = Audio.PlaybackMode.LowLatency;
     this.splatSFX3.playbackMode = Audio.PlaybackMode.LowLatency;
     this.splatSFX4.playbackMode = Audio.PlaybackMode.LowLatency;
+    this.splatSFX1.spatialAudio.enabled = true;
+    this.splatSFX2.spatialAudio.enabled = true;
+    this.splatSFX3.spatialAudio.enabled = true;
+    this.splatSFX4.spatialAudio.enabled = true;
+    this.splatSFX1.spatialAudio.positionEffect.enabled = true;
+    this.splatSFX2.spatialAudio.positionEffect.enabled = true;
+    this.splatSFX3.spatialAudio.positionEffect.enabled = true;
+    this.splatSFX4.spatialAudio.positionEffect.enabled = true;
+    this.splatSFX1.spatialAudio.directivityEffect.enabled = true;
+    this.splatSFX2.spatialAudio.directivityEffect.enabled = true;
+    this.splatSFX3.spatialAudio.directivityEffect.enabled = true;
+    this.splatSFX4.spatialAudio.directivityEffect.enabled = true;
+    
     //this.audio.playbackMode = Audio.PlaybackMode.LowPower;
 
     // create update event
@@ -157,19 +193,15 @@ export class NewScript extends BaseScriptComponent {
       this.targetObject.getTransform().setWorldRotation(toRotation);
       this.targetObject.getTransform().setWorldScale(new vec3(50, 50, 50));
       var strength = (this.audioAnalyzer as any).getStrength();
-      print(this.soundCooldown);
-      print("sssttrrreeennngtthhhh"+ strength);
+      //print(this.soundCooldown);
+      //print("sssttrrreeennngtthhhh"+ strength);
       if (
         strength > 0.6 && this.soundCooldown < 0
       ) {
-
-
+        this.splatSFX = this.getRandomSplatSFX();
+        //print(this.splatSFX);
         // init sound effects
-        this.splatSFX.spatialAudio.enabled = true;
-        this.splatSFX.spatialAudio.positionEffect.enabled = true;
-        this.splatSFX.spatialAudio.directivityEffect.enabled = true;
-        
-        this.splatSFX.play(1); // Play the sound once
+        this.splatSFX1.play(1); // Play the sound once
         this.soundCooldown = 20;
         
         // Called when a trigger ends
@@ -224,15 +256,6 @@ export class NewScript extends BaseScriptComponent {
     this.tick++;
     this.soundCooldown--;
 
-    //@input SceneObject targetObject
-
-    // var renderMeshVisual = this.targetObject.getComponent("Component.RenderMeshVisual");
-    // if (renderMeshVisual) {
-    //     var newMaterial = renderMeshVisual.mainMaterial.clone();
-    //     newMaterial.mainPass.baseColor = new vec4(Math.sin(this.tick / 100), 1.0, 1.0, 1.0);
-    //     renderMeshVisual.mainMaterial = newMaterial;
-    // }
-
     this.primaryInteractor =
       SIK.InteractionManager.getTargetingInteractors().shift();
       // let handInputData = SIK.HandInputData;
@@ -270,11 +293,45 @@ export class NewScript extends BaseScriptComponent {
       const strength = (this.audioAnalyzer as any).getStrength();
       const hue_float = (this.audioAnalyzer as any).getHue();
             
-      if (strength > 0) {
-        const hue = this.hsvToRgb(this.hueFloatToHsv(hue_float));
+      this.insertAtFront(strength, this.lastStrengths);
+      this.insertAtFront(hue_float, this.lastPitches);
+
+      var avgStrength = 0;
+      var avgHue = 0;
+      for (let i = 0; i < this.lastStrengths.length; i++) {
+        avgStrength += this.lastStrengths[i];
+        avgHue += this.lastPitches[i];
+      }
+
+      avgStrength /= this.lastStrengths.length;
+      avgHue /= this.lastPitches.length;
+
+      var hsv = this.hueFloatToHsv(avgHue);
+      var color = this.hsvToRgb(hsv);
+
+      // desaturate color if strength is low
+      const THRESHOLD = 0.25;
+      if (avgStrength < THRESHOLD) {
+          var white = { r: 1, g: 1, b: 1, a: 1 };
+          var t = avgStrength / THRESHOLD;
+
+          // Interpolate each component of the color between white and the target color
+          color = new vec4(
+              white.r + (color.r - white.r) * t,
+              white.g + (color.g - white.g) * t,
+              white.b + (color.b - white.b) * t,
+              white.a  // Keep alpha at 1
+          );
+      }
+
+
+      
+      //if (strength > 0)
+      {
+        //const hue = this.hsvToRgb(this.hueFloatToHsv(hue_float));
         var preVisual = this.targetObject.getComponent("Component.RenderMeshVisual");
         var newMat = preVisual.mainMaterial.clone(); 
-        newMat.mainPass.baseColor = hue; 
+        newMat.mainPass.baseColor = color; 
         preVisual.mainMaterial = newMat;
       }            
             
