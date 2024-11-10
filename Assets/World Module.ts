@@ -15,9 +15,21 @@ export class NewScript extends BaseScriptComponent {
   private primaryInteractor;
   private hitTestSession;
   private transform: Transform;
+  private tick;
+  private targetObject: SceneObject;
 
   @input
-  targetObject: SceneObject;
+  splatObject1: SceneObject;
+  @input
+  splatObject2: SceneObject;
+  @input
+  splatObject3: SceneObject;
+  @input
+  splatObject4: SceneObject;
+  @input
+  splatObject5: SceneObject;
+  @input
+  splatObject6: SceneObject;
 
   @input
   filterEnabled: boolean;
@@ -28,7 +40,37 @@ export class NewScript extends BaseScriptComponent {
   @input
   audio: AudioComponent;
 
+
+  getRandomSplatObject() {
+    // Generate a random integer between 1 and 6
+    const randomIndex = Math.floor(Math.random() * 6) + 1;
+
+    // Return the corresponding splat object based on the random number
+    switch (randomIndex) {
+        case 1:
+            return this.splatObject1;
+        case 2:
+            return this.splatObject2;
+        case 3:
+            return this.splatObject3;
+        case 4:
+            return this.splatObject4;
+        case 5:
+            return this.splatObject5;
+        case 6:
+            return this.splatObject6;
+        default:
+            return this.splatObject1; // Fallback in case of any issues
+    }
+  }
+
+
   onAwake() {
+
+    this.targetObject = this.getRandomSplatObject();
+
+    this.tick = 0;
+
     // create new hit session
     this.hitTestSession = this.createHitTestSession(this.filterEnabled);
     if (!this.sceneObject) {
@@ -79,6 +121,7 @@ export class NewScript extends BaseScriptComponent {
       //set position and rotation
       this.targetObject.getTransform().setWorldPosition(hitPosition);
       this.targetObject.getTransform().setWorldRotation(toRotation);
+      this.targetObject.getTransform().setWorldScale(new vec3(50, 50, 50));
 
       if (
         this.primaryInteractor.previousTrigger !== InteractorTriggerType.None &&
@@ -97,11 +140,9 @@ export class NewScript extends BaseScriptComponent {
 
         //this.audio.fadeOutTime = 1;
         //this.audio.stop(true);  // true for fade out
-        print("cube created");
-        //                      print(
-        //        `The left hand has pinched. The tip of the left index finger is: ${this.hi.hand.indexTip.position}.`
-        //      );
-        var new_splat = this.sceneObject.copyWholeHierarchy(this.targetObject);
+        
+        this.sceneObject.copyWholeHierarchy(this.targetObject);
+        this.targetObject = this.getRandomSplatObject();
       }
     }
   }
@@ -114,6 +155,18 @@ export class NewScript extends BaseScriptComponent {
 }
     
   onUpdate() {
+
+    this.tick++;
+
+    //@input SceneObject targetObject
+
+    var renderMeshVisual = this.targetObject.getComponent("Component.RenderMeshVisual");
+    if (renderMeshVisual) {
+        var newMaterial = renderMeshVisual.mainMaterial.clone();
+        newMaterial.mainPass.baseColor = new vec4(Math.sin(this.tick / 100), 1.0, 1.0, 1.0);
+        renderMeshVisual.mainMaterial = newMaterial;
+    }
+
     this.primaryInteractor =
       SIK.InteractionManager.getTargetingInteractors().shift();
       // let handInputData = SIK.HandInputData;

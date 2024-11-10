@@ -99,7 +99,7 @@
     []
   Name: AudioAnalyzerHelper
   Enabled: true
-  ScriptAsset: !<reference> e393f829-e382-44e1-ba71-22408eee6989
+  ScriptAsset: !<reference> b36b8cc4-9c23-4619-842e-76b6c38c928d
   ScriptInputsDefault:
     index: true
     lerpCoef: true
@@ -161,7 +161,7 @@
       blendshapeName: ""
       startWeight: !<float> 0.000000
       endWeight: !<float> 1.000000
-      asset: !<reference.Asset> df66b797-73bc-4dc7-9397-84c9be36ffc9
+      asset: !<reference.Asset> 8cfd920f-7289-4f67-bf1c-c3f44bc71020
       parameter: floatArray
       assetValueType: 0
       startAssetFloat: !<float> 0.000000
