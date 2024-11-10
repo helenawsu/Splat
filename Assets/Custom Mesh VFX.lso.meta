@@ -1,0 +1,84 @@
+- !<AssetImportMetadata/68619825-f7c7-4171-8363-93979749b708>
+  ImportedAssetIds:
+    .hidden/Asset.Material: !<reference> 0f4ccfc4-a889-42ba-8a71-edb8112b772c
+    .hidden/Asset.Material|Asset.Material|LegacyPassInfo_0: !<reference> 7994174f-b967-4931-860b-8ecf0a85a922
+    .hidden/Asset.Material|Asset1.Material|LegacyPassInfo_0: !<reference> ac92c020-723c-4338-91a2-d104ffffebb9
+    .hidden/Asset.Material|Asset2.Material|LegacyPassInfo_0: !<reference> 4b79ffd0-0ec4-45de-be34-34247c37d9ca
+    .hidden/Asset1.Material: !<reference> a7ce4945-5cc9-4215-9a8f-8ae8a9262b23
+    .hidden/Asset2.Material: !<reference> 8eb523db-f9e4-4683-be9f-aae798f7511a
+    .hidden/feedback_39: !<reference> 64f7c766-d6d7-41b8-8cc2-973b33c72827
+    .hidden/render_39: !<reference> bcabb3eb-3614-498d-afba-399306749cef
+    .hidden/simulate_39: !<reference> 73e28b12-7b4c-4fc6-a1f9-2a34f3073859
+    21a1aec3-f8bd-4859-a858-570cccb08883: !<reference> ba68ebe3-860f-43df-8496-7166c740893d
+    3a7b332e-c9dc-4a56-a21f-bc3f5f719a42: !<reference> f4917efc-be81-4f37-aced-cde76c511e34
+    549877aa-4c9f-4651-a746-1fcc1ca5f9b8: !<reference> 541ce9e3-2cb3-49c1-9201-28d38dabbc52
+    Custom Mesh Emitter: !<reference> 66d1c8fa-0df9-42fe-9ed0-b7ec40bdecba
+    Custom Mesh VFX Resource/Box: !<reference> a866c678-0a51-435c-b5b0-127c6181cf19
+    Custom_Mesh_VFX__PLACE_IN_OBJECTS_PANEL: !<reference> 67e70f56-f883-4f58-9da9-ace14cbb3ee8
+    Manager_Script: !<reference> 09b4a7a1-d429-41a0-970f-a2925d061449
+    ad39964a1dacf2c9: !<reference> f2b987be-1788-4cf4-ba09-df1fa7d4f51f
+    c1eee272efe32c00: !<reference> 5e996124-06f2-4b09-a1f1-5468930d09e6
+    ff148744-a096-495a-afb6-5430db3a326f: !<reference> f3baa190-8e49-497b-9836-88e59b7cc74d
+  ImporterName: LensCoreImporter
+  PrimaryAsset: !<reference> 67e70f56-f883-4f58-9da9-ace14cbb3ee8
+  PackageType: LegacyPackage
+  PackagePolicy: ShouldBeUnpacked
+  AssetDataMap:
+    Custom Mesh Emitter: !<own> 610d8ee5-053c-4cd4-bcf3-005a5d465b68
+    Custom_Mesh_VFX__PLACE_IN_OBJECTS_PANEL: !<own> 3b4cd28d-b60b-4f89-82d7-1b5887022ebc
+  DependentFiles:
+    []
+  ImporterSettings: !<LensCoreImporterSettings/9bcb63f3-14e3-49fe-860e-b2a14a3c7cdd>
+    PersistentIdGenerationAlgorithm: DescriptorBased
+  CompressionSettings: !<ComplexCompressionSettings/5729ccbe-327a-42a5-85e7-91d71073a109>
+    Presets:
+      None Compression: !<SingleCompressionSettings/837b4b82-6fad-4017-8654-f08da91e9404>
+        CompressorName: None
+        CompressionSettings: !<own> 00000000-0000-0000-0000-000000000000
+    ExtensionMappings:
+      mesh: None Compression
+    Overrides:
+      {}
+- !<VFXComponent/02a941ff-7a00-41a3-9adb-bef274adecab>
+  PrefabRemaps:
+    []
+  Name: VFX Component
+  Enabled: true
+  RenderOrder: 0
+  StretchMode: Stretch
+  VerticalAlignment: Center
+  HorizontalAlignment: Center
+  MeshShadowMode: None
+  ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+  ShadowDensity: 1.000000
+  VFXAsset: !<reference> 66d1c8fa-0df9-42fe-9ed0-b7ec40bdecba
+- !<ObjectPrefabAssetData/3b4cd28d-b60b-4f89-82d7-1b5887022ebc>
+  SourceRemaps:
+    - 5e996124-06f2-4b09-a1f1-5468930d09e6: f368013b-09a7-4955-b56a-f5abb83a5b78
+    - f2b987be-1788-4cf4-ba09-df1fa7d4f51f: 02a941ff-7a00-41a3-9adb-bef274adecab
+  SourceState: !<own> afc1d9eb-ac79-4c54-967b-8910569b21aa
+- !<VFXAssetData/610d8ee5-053c-4cd4-bcf3-005a5d465b68>
+  Mesh: !<reference> a866c678-0a51-435c-b5b0-127c6181cf19
+  SystemPassProperties:
+    {}
+- !<ObjectPrefab/afc1d9eb-ac79-4c54-967b-8910569b21aa>
+  PackagePath: Custom_Mesh_VFX__PLACE_IN_OBJECTS_PANEL
+  objects:
+    - !<own> f368013b-09a7-4955-b56a-f5abb83a5b78
+  LazyLoading: false
+  RetainAssets: true
+- !<SceneObject/f368013b-09a7-4955-b56a-f5abb83a5b78>
+  PrefabRemaps:
+    []
+  Name: Custom_Mesh_VFX__PLACE_IN_OBJECTS_PANEL
+  Enabled: true
+  Layers: 1
+  LocalTransform:
+    position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    hasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> 02a941ff-7a00-41a3-9adb-bef274adecab

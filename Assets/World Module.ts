@@ -194,7 +194,7 @@ export class NewScript extends BaseScriptComponent {
       //set position and rotation
       this.targetObject.getTransform().setWorldPosition(hitPosition);
       this.targetObject.getTransform().setWorldRotation(toRotation);
-      var SCALE = 30;
+      var SCALE = 70;
       this.targetObject.getTransform().setWorldScale(new vec3(SCALE, SCALE, SCALE));
       var strength = (this.audioAnalyzer as any).getStrength();
       print(this.soundCooldown);
@@ -203,8 +203,8 @@ export class NewScript extends BaseScriptComponent {
       //   strength > 0.6 && this.soundCooldown < 0
       // ) 
       if (
-        this.primaryInteractor.previousTrigger !== InteractorTriggerType.None &&
-        this.primaryInteractor.currentTrigger === InteractorTriggerType.None
+        (this.primaryInteractor.previousTrigger !== InteractorTriggerType.None &&
+        this.primaryInteractor.currentTrigger === InteractorTriggerType.None) ||  (strength > 0.6 && this.soundCooldown < 0)
       )
       {
         this.splatSFX = this.getRandomSplatSFX();

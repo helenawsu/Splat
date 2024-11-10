@@ -4053,7 +4053,7 @@
   PrefabRemaps:
     []
   Name: splat plane2
-  Enabled: true
+  Enabled: false
   Layers: 1
   LocalTransform:
     position: {x: 0.000000, y: 0.000000, z: 0.000000}
@@ -5976,7 +5976,7 @@
   PrefabRemaps:
     []
   Name: splat plane3
-  Enabled: true
+  Enabled: false
   Layers: 1
   LocalTransform:
     position: {x: 0.000000, y: 0.000000, z: 0.000000}
@@ -7067,7 +7067,7 @@
   PrefabRemaps:
     []
   Name: splat plane6
-  Enabled: true
+  Enabled: false
   Layers: 1
   LocalTransform:
     position: {x: 0.000000, y: 0.000000, z: 0.000000}
@@ -7212,7 +7212,7 @@
   PrefabRemaps:
     []
   Name: splat plane5
-  Enabled: true
+  Enabled: false
   Layers: 1
   LocalTransform:
     position: {x: 0.000000, y: 0.000000, z: 0.000000}
@@ -7298,7 +7298,7 @@
   PrefabRemaps:
     []
   Name: splat plane1
-  Enabled: true
+  Enabled: false
   Layers: 1
   LocalTransform:
     position: {x: 0.000000, y: 0.000000, z: 0.000000}
@@ -7835,22 +7835,6 @@
   ScriptTypes:
     "":
       {}
-- !<ScriptComponent/cdaa4523-eb87-4d5f-a718-8baa082db034>
-  PrefabRemaps:
-    []
-  Name: Untitled TypeScript
-  Enabled: true
-  ScriptAsset: !<reference> 62a61a33-3f19-46cf-8eac-1a3cf3b29f13
-  ScriptInputsDefault:
-    {}
-  ScriptTypesDefault:
-    {}
-  ScriptInputs:
-    "":
-      audio: !<reference.AudioComponent> 15d86e9f-446f-4223-bc08-f4e5dbedbfc9
-  ScriptTypes:
-    "":
-      {}
 - !<SceneObject/cd78bfd7-dfb5-4f96-8887-93573615d701>
   PrefabRemaps:
     - 9c8f743b-a957-4975-9f04-e64600f23bb1: 5a007918-34e7-4966-a345-ce9f201894e7
@@ -7867,6 +7851,22 @@
     []
   Components:
     - !<own> 9c8f743b-a957-4975-9f04-e64600f23bb1
+- !<ScriptComponent/cdaa4523-eb87-4d5f-a718-8baa082db034>
+  PrefabRemaps:
+    []
+  Name: Untitled TypeScript
+  Enabled: true
+  ScriptAsset: !<reference> 62a61a33-3f19-46cf-8eac-1a3cf3b29f13
+  ScriptInputsDefault:
+    {}
+  ScriptTypesDefault:
+    {}
+  ScriptInputs:
+    "":
+      audio: !<reference.AudioComponent> 15d86e9f-446f-4223-bc08-f4e5dbedbfc9
+  ScriptTypes:
+    "":
+      {}
 - !<SceneObject/cf3bc4e4-ebc8-4bba-9fa6-b51856e9947d>
   PrefabRemaps:
     []
@@ -8345,6 +8345,10 @@
       splatObject4: !<reference.SceneObject> fc202d85-8c15-40d4-b75c-c67cbd4b830c
       splatObject5: !<reference.SceneObject> bdaf7291-51f1-4ea8-850d-2259cf51edd9
       splatObject6: !<reference.SceneObject> b91c2f06-2be0-43cf-bfd7-b96cf4700e2b
+      splatSFX1: !<reference.AudioComponent> 958898eb-3edb-4162-b1cd-fbdf44614d68
+      splatSFX2: !<reference.AudioComponent> b6379def-e6a8-44f3-839a-3ab23f41b7bf
+      splatSFX3: !<reference.AudioComponent> 4743e8ca-559d-4846-999e-862f15e359d1
+      splatSFX4: !<reference.AudioComponent> 15d86e9f-446f-4223-bc08-f4e5dbedbfc9
       paintDropsVFX: !<reference.VFXAsset> 80ddaff1-1d9d-4fc3-90c6-c167e68074e0
       filterEnabled: false
       audioAnalyzer: !<reference.ScriptComponent> b005ef03-8d9b-4bba-9231-63f7b28cc071
@@ -9584,7 +9588,7 @@
   PrefabRemaps:
     []
   Name: splat plane4
-  Enabled: true
+  Enabled: false
   Layers: 1
   LocalTransform:
     position: {x: 0.000000, y: 0.000000, z: 0.000000}

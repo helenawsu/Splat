@@ -1,0 +1,34 @@
+- !<ObjectPrefab/aaf49c7a-830d-4308-bf01-07a755e449bd>
+  PackagePath: Custom_Mesh_VFX__PLACE_IN_OBJECTS_PANEL
+  objects:
+    - !<own> 94606530-2df1-46fc-9a06-d580d42c682c
+  LazyLoading: false
+  RetainAssets: true
+- !<VFXComponent/8acaeb37-756b-49ea-b027-0a3efd01de55>
+  PrefabRemaps:
+    []
+  Name: VFX Component
+  Enabled: true
+  RenderOrder: 0
+  StretchMode: Stretch
+  VerticalAlignment: Center
+  HorizontalAlignment: Center
+  MeshShadowMode: None
+  ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+  ShadowDensity: 1.000000
+  VFXAsset: !<reference> f76f787f-f310-4dc0-bb2a-a719fd1fe757
+- !<SceneObject/94606530-2df1-46fc-9a06-d580d42c682c>
+  PrefabRemaps:
+    []
+  Name: Custom_Mesh_VFX__PLACE_IN_OBJECTS_PANEL
+  Enabled: true
+  Layers: 1
+  LocalTransform:
+    position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    hasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> 8acaeb37-756b-49ea-b027-0a3efd01de55
