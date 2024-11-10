@@ -1,0 +1,77 @@
+- !<Material/6aa177fe-3764-430b-bc05-f16b64a242ce>
+  PackagePath: ""
+  PassesInfo:
+    - !<own> f8410e3e-11e1-4f1f-8342-8480e0259066
+- !<PassInfo/f8410e3e-11e1-4f1f-8342-8480e0259066>
+  DepthWrite: true
+  DepthTest: true
+  DepthFunction: LessEqual
+  TwoSided: true
+  ColorMask: {x: true, y: true, z: true, w: true}
+  CullMode: Back
+  PolygonOffset: {x: 0.000000, y: 0.000000}
+  FrustumCulling: Auto
+  FrustumCullPad: 0.000000
+  InstanceCount: 1
+  Defines:
+    []
+  BlendMode: PremultipliedAlphaAuto
+  Properties:
+    Port_AO_N006:
+      typeIdx: 4
+      value: {x: 1.000000, y: 1.000000, z: 1.000000}
+    Port_Center_N016:
+      typeIdx: 3
+      value: {x: 0.000000, y: 0.000000}
+    Port_Emissive_N006:
+      typeIdx: 4
+      value: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Port_Metallic_N006:
+      typeIdx: 1
+      value: 0.100000
+    Port_Opacity_N006:
+      typeIdx: 1
+      value: 1.000000
+    Port_SpecularAO_N006:
+      typeIdx: 4
+      value: {x: 1.000000, y: 1.000000, z: 1.000000}
+    PreviewEnabled:
+      typeIdx: 0
+      value: 0
+    Tweak_N2:
+      typeIdx: 1
+      value: 0.330000
+    Tweak_N20:
+      typeIdx: 5
+      value: {x: 0.329412, y: 0.615686, z: 0.992157, w: 1.000000}
+    normalTex:
+      typeIdx: 9
+      value:
+        id: 5b51e555-ae11-45b7-b6b3-d756b990ffba
+        sampler:
+          filteringMode: Trilinear
+          wrapModeU: Repeat
+          wrapModeV: Repeat
+          wrapModeW: Repeat
+          borderColor: {x: 0.000000, y: 0.000000, z: 0.000000, w: 0.000000}
+          mipmaps: false
+        type: Texture2D
+    normalTexBorderColor:
+      typeIdx: 5
+      value: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+    normalTexDims:
+      typeIdx: 5
+      value: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+    normalTexTransform:
+      typeIdx: 7
+      value:
+        0: {x: 1.000000, y: 0.000000, z: 0.000000}
+        1: {x: 0.000000, y: 1.000000, z: 0.000000}
+        2: {x: 0.000000, y: 0.000000, z: 1.000000}
+    normalTexUvMinMax:
+      typeIdx: 5
+      value: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+    uvScale:
+      typeIdx: 1
+      value: 1.800000
+  Pass: !<reference> 06622031-a56e-4013-9545-f8ee1b1f1f05

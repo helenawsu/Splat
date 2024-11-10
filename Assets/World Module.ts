@@ -18,6 +18,9 @@ export class NewScript extends BaseScriptComponent {
 
   @input
   filterEnabled: boolean;
+    
+  @input
+  audio: AudioComponent;
 
   onAwake() {
     // create new hit session
@@ -29,6 +32,10 @@ export class NewScript extends BaseScriptComponent {
     this.transform = this.targetObject.getTransform();
     // disable target object when surface is not detected
     this.targetObject.enabled = false;
+
+    //this.audio.playbackMode = Audio.PlaybackMode.LowLatency;
+    this.audio.playbackMode = Audio.PlaybackMode.LowPower;
+
     // create update event
     this.createEvent('UpdateEvent').bind(this.onUpdate.bind(this));
   }
@@ -43,6 +50,7 @@ export class NewScript extends BaseScriptComponent {
   }
 
   onHitTestResult(results) {
+
     if (results === null) {
       this.targetObject.enabled = false;
     } else {
@@ -70,9 +78,20 @@ export class NewScript extends BaseScriptComponent {
         this.primaryInteractor.previousTrigger !== InteractorTriggerType.None &&
         this.primaryInteractor.currentTrigger === InteractorTriggerType.None
       ) {
-                print("making a cube");
+
+        print("blah");
+
         // Called when a trigger ends
         // Copy the plane/axis object
+        this.audio.spatialAudio.enabled = true;
+        this.audio.spatialAudio.positionEffect.enabled = true;
+        //this.audio.spatialAudio.positionEffect.effectType = Audio.PositionEffectType.Directional;
+        //this.audio.spatialAudio. = this.targetObject.getTransform().getWorldPosition();
+        this.audio.play(1); // Play the sound once
+
+        //this.audio.fadeOutTime = 1;
+        //this.audio.stop(true);  // true for fade out
+        
         this.sceneObject.copyWholeHierarchy(this.targetObject);
       }
     }
@@ -81,7 +100,6 @@ export class NewScript extends BaseScriptComponent {
   onUpdate() {
     this.primaryInteractor =
       SIK.InteractionManager.getTargetingInteractors().shift();
-
     if (
       this.primaryInteractor &&
       this.primaryInteractor.isActive() &&

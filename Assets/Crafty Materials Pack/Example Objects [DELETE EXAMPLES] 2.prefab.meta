@@ -1,0 +1,304 @@
+- !<AssetImportMetadata/1d11a959-21f1-45d5-b6ca-98d13e6e9f72>
+  ImportedAssetIds:
+    ObjectPrefab: !<reference> 35782207-1434-44ab-be0d-96f0477f6f1b
+  ImporterName: ObjectPrefabImporter
+  PrimaryAsset: !<reference> 35782207-1434-44ab-be0d-96f0477f6f1b
+  PackageType: NotAPackage
+  PackagePolicy: CannotBeUnpacked
+  AssetDataMap:
+    ObjectPrefab: !<own> 8b44d666-db6f-4390-9a7c-627525811cc6
+  DependentFiles:
+    []
+  ImporterSettings: !<AssetImporterSettings/acd4957c-e87c-497a-b38d-e7b7f6405172>
+    {}
+  CompressionSettings: !<own> 00000000-0000-0000-0000-000000000000
+- !<SceneObject/2274188a-ac6f-4bb3-8aaf-f2d922cf16f3>
+  PrefabRemaps:
+    []
+  Name: Colored Pencil 3
+  Enabled: true
+  Layers: 1
+  LocalTransform:
+    position: {x: 21.265850, y: 79.905228, z: 0.000000}
+    rotation: {x: 0.000000, y: -0.000000, z: 0.000000}
+    scale: {x: 2.294366, y: 2.294366, z: 2.294366}
+    hasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> e1a34bd4-8f49-4541-b9b0-dc194463a964
+- !<RenderMeshVisual/273f7873-0baf-41d2-a466-e1c22cb47cbd>
+  PrefabRemaps:
+    []
+  Name: Render Mesh Visual
+  Enabled: true
+  RenderOrder: 0
+  StretchMode: Stretch
+  VerticalAlignment: Center
+  HorizontalAlignment: Center
+  MeshShadowMode: None
+  ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+  ShadowDensity: 1.000000
+  Materials:
+    - !<reference> 6aa177fe-3764-430b-bc05-f16b64a242ce
+  Mesh: !<reference> d0ce0a01-44a2-4cf2-be63-c842e220806d
+  Skin: !<reference> 00000000-0000-0000-0000-000000000000
+  BlendShapesEnabled: true
+  BlendNormals: false
+  BlendShapes:
+    {}
+- !<SceneObject/2ae6e6b1-4a3f-4d63-bc9b-e71dbf43ad28>
+  PrefabRemaps:
+    []
+  Name: Modeling Clay 2
+  Enabled: true
+  Layers: 1
+  LocalTransform:
+    position: {x: -31.024446, y: 51.796238, z: 0.000000}
+    rotation: {x: 0.000000, y: -0.000000, z: 0.000000}
+    scale: {x: 2.294366, y: 2.294366, z: 2.294366}
+    hasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> 808a0fdb-62ea-40c8-9328-0355d9f1eadd
+- !<SceneObject/540eda7b-8f1e-4544-8692-ce52e275aee7>
+  PrefabRemaps:
+    []
+  Name: Colored Pencil
+  Enabled: true
+  Layers: 1
+  LocalTransform:
+    position: {x: 19.931412, y: 23.280174, z: 0.000000}
+    rotation: {x: 0.000000, y: -0.000000, z: 0.000000}
+    scale: {x: 2.294366, y: 2.294366, z: 2.294366}
+    hasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> 6d8e619a-5503-4baa-beab-f97a6a08136c
+- !<SceneObject/58c2a76c-3fc8-4cce-b7d5-8db3a312ebb8>
+  PrefabRemaps:
+    []
+  Name: Modeling Clay 3
+  Enabled: true
+  Layers: 1
+  LocalTransform:
+    position: {x: 33.855957, y: 51.796238, z: 0.000000}
+    rotation: {x: 0.000000, y: -0.000000, z: 0.000000}
+    scale: {x: 2.294366, y: 2.294366, z: 2.294366}
+    hasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> 273f7873-0baf-41d2-a466-e1c22cb47cbd
+- !<RenderMeshVisual/6d8e619a-5503-4baa-beab-f97a6a08136c>
+  PrefabRemaps:
+    []
+  Name: Render Mesh Visual
+  Enabled: true
+  RenderOrder: 0
+  StretchMode: Stretch
+  VerticalAlignment: Center
+  HorizontalAlignment: Center
+  MeshShadowMode: None
+  ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+  ShadowDensity: 1.000000
+  Materials:
+    - !<reference> 0d183c8d-1a72-4e4c-8092-d1fcaddd46b0
+  Mesh: !<reference> d0ce0a01-44a2-4cf2-be63-c842e220806d
+  Skin: !<reference> 00000000-0000-0000-0000-000000000000
+  BlendShapesEnabled: true
+  BlendNormals: false
+  BlendShapes:
+    {}
+- !<RenderMeshVisual/770f0332-ed3c-4b34-b516-a968563d9a3b>
+  PrefabRemaps:
+    []
+  Name: Render Mesh Visual
+  Enabled: true
+  RenderOrder: 0
+  StretchMode: Stretch
+  VerticalAlignment: Center
+  HorizontalAlignment: Center
+  MeshShadowMode: None
+  ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+  ShadowDensity: 1.000000
+  Materials:
+    - !<reference> 053276a3-f709-4fe7-bc73-57ac171d33b3
+  Mesh: !<reference> d0ce0a01-44a2-4cf2-be63-c842e220806d
+  Skin: !<reference> 00000000-0000-0000-0000-000000000000
+  BlendShapesEnabled: true
+  BlendNormals: false
+  BlendShapes:
+    {}
+- !<RenderMeshVisual/808a0fdb-62ea-40c8-9328-0355d9f1eadd>
+  PrefabRemaps:
+    []
+  Name: Render Mesh Visual
+  Enabled: true
+  RenderOrder: 0
+  StretchMode: Stretch
+  VerticalAlignment: Center
+  HorizontalAlignment: Center
+  MeshShadowMode: None
+  ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+  ShadowDensity: 1.000000
+  Materials:
+    - !<reference> 5d85ad10-1903-400f-9293-47d97deea9bd
+  Mesh: !<reference> d0ce0a01-44a2-4cf2-be63-c842e220806d
+  Skin: !<reference> 00000000-0000-0000-0000-000000000000
+  BlendShapesEnabled: true
+  BlendNormals: false
+  BlendShapes:
+    {}
+- !<ObjectPrefabAssetData/8b44d666-db6f-4390-9a7c-627525811cc6>
+  SourceRemaps:
+    - 0fcf3543-b625-4fa0-8ff9-75b9e901aa2e: b7c31d57-bf2b-414a-b06a-a4c60af05de1
+    - 182eba92-a91d-44b3-ad84-b60773e20e4f: 6d8e619a-5503-4baa-beab-f97a6a08136c
+    - 26457a62-e577-4ccc-a919-e4f3b71ceb43: 58c2a76c-3fc8-4cce-b7d5-8db3a312ebb8
+    - 3dd5f4d7-4bdf-4d22-92d2-64d1a2d4cf57: 540eda7b-8f1e-4544-8692-ce52e275aee7
+    - 58c7686d-2e36-44d2-95f1-75574fe89484: ea4b92b4-c0f6-4569-9dd9-3052a27728d4
+    - 5916d835-ba65-442e-95ba-b5dc0d6cc51d: 2274188a-ac6f-4bb3-8aaf-f2d922cf16f3
+    - 8020bfaa-11af-43d1-b473-39ab7e88b079: ab9e6555-cf7f-4b0f-908a-ba361cdab5fe
+    - 88bdc96b-f63b-4415-bac9-368d53dd13f4: bf5f6a6b-10bd-4798-8ab0-18ceb7e60306
+    - 9d58f011-fa07-4620-ab42-6369f689ca47: be8f0704-f9f0-465d-8b6e-dddd9eb37348
+    - 9e76668e-70a8-4071-8780-7e673de5e19c: 273f7873-0baf-41d2-a466-e1c22cb47cbd
+    - a4f4e149-6f5b-425d-887b-bbb682fda35b: 770f0332-ed3c-4b34-b516-a968563d9a3b
+    - b457ad93-8731-4acb-b21f-8f095befe82a: 2ae6e6b1-4a3f-4d63-bc9b-e71dbf43ad28
+    - b800a410-cbcd-4982-a769-494747fe0d7b: 9b750bfd-bb0c-4813-a60e-412290fd334b
+    - c5b20d8a-609c-4f28-ac48-577a31a5705d: 808a0fdb-62ea-40c8-9328-0355d9f1eadd
+    - f14e44e8-9d37-41e4-854a-2cf6feecfd60: e1a34bd4-8f49-4541-b9b0-dc194463a964
+  SourceState: !<own> c05be901-905b-4737-a97c-a82038bcff04
+- !<RenderMeshVisual/9b750bfd-bb0c-4813-a60e-412290fd334b>
+  PrefabRemaps:
+    []
+  Name: Render Mesh Visual
+  Enabled: true
+  RenderOrder: 0
+  StretchMode: Stretch
+  VerticalAlignment: Center
+  HorizontalAlignment: Center
+  MeshShadowMode: None
+  ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+  ShadowDensity: 1.000000
+  Materials:
+    - !<reference> 216b32e8-87c6-4612-82d0-27fc6312e150
+  Mesh: !<reference> d0ce0a01-44a2-4cf2-be63-c842e220806d
+  Skin: !<reference> 00000000-0000-0000-0000-000000000000
+  BlendShapesEnabled: true
+  BlendNormals: false
+  BlendShapes:
+    {}
+- !<SceneObject/ab9e6555-cf7f-4b0f-908a-ba361cdab5fe>
+  PrefabRemaps:
+    []
+  Name: Riso Print
+  Enabled: true
+  Layers: 1
+  LocalTransform:
+    position: {x: -14.862494, y: 24.801500, z: 0.000000}
+    rotation: {x: 0.000000, y: -0.000000, z: 0.000000}
+    scale: {x: 2.294366, y: 2.294366, z: 2.294366}
+    hasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> 9b750bfd-bb0c-4813-a60e-412290fd334b
+- !<SceneObject/b7c31d57-bf2b-414a-b06a-a4c60af05de1>
+  PrefabRemaps:
+    []
+  Name: Colored Pencil 2
+  Enabled: true
+  Layers: 1
+  LocalTransform:
+    position: {x: -15.497228, y: 79.905228, z: 0.000000}
+    rotation: {x: 0.000000, y: -0.000000, z: 0.000000}
+    scale: {x: 2.294366, y: 2.294366, z: 2.294366}
+    hasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> 770f0332-ed3c-4b34-b516-a968563d9a3b
+- !<SceneObject/be8f0704-f9f0-465d-8b6e-dddd9eb37348>
+  PrefabRemaps:
+    []
+  Name: "Example Objects [DELETE EXAMPLES]"
+  Enabled: true
+  Layers: 1
+  LocalTransform:
+    position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    hasSegmentScaleCompensation: false
+  Children:
+    - !<own> 540eda7b-8f1e-4544-8692-ce52e275aee7
+    - !<own> b7c31d57-bf2b-414a-b06a-a4c60af05de1
+    - !<own> 2274188a-ac6f-4bb3-8aaf-f2d922cf16f3
+    - !<own> bf5f6a6b-10bd-4798-8ab0-18ceb7e60306
+    - !<own> 2ae6e6b1-4a3f-4d63-bc9b-e71dbf43ad28
+    - !<own> 58c2a76c-3fc8-4cce-b7d5-8db3a312ebb8
+    - !<own> ab9e6555-cf7f-4b0f-908a-ba361cdab5fe
+  Components:
+    []
+- !<SceneObject/bf5f6a6b-10bd-4798-8ab0-18ceb7e60306>
+  PrefabRemaps:
+    []
+  Name: Modeling Clay
+  Enabled: true
+  Layers: 1
+  LocalTransform:
+    position: {x: 1.773183, y: 51.796238, z: 0.000000}
+    rotation: {x: 0.000000, y: -0.000000, z: 0.000000}
+    scale: {x: 2.294366, y: 2.294366, z: 2.294366}
+    hasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> ea4b92b4-c0f6-4569-9dd9-3052a27728d4
+- !<ObjectPrefab/c05be901-905b-4737-a97c-a82038bcff04>
+  PackagePath: "Example Objects [DELETE EXAMPLES] 2"
+  objects:
+    - !<own> be8f0704-f9f0-465d-8b6e-dddd9eb37348
+  LazyLoading: false
+  RetainAssets: true
+- !<RenderMeshVisual/e1a34bd4-8f49-4541-b9b0-dc194463a964>
+  PrefabRemaps:
+    []
+  Name: Render Mesh Visual
+  Enabled: true
+  RenderOrder: 0
+  StretchMode: Stretch
+  VerticalAlignment: Center
+  HorizontalAlignment: Center
+  MeshShadowMode: None
+  ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+  ShadowDensity: 1.000000
+  Materials:
+    - !<reference> d387aed0-708b-4b1f-a703-31c9d95587b7
+  Mesh: !<reference> d0ce0a01-44a2-4cf2-be63-c842e220806d
+  Skin: !<reference> 00000000-0000-0000-0000-000000000000
+  BlendShapesEnabled: true
+  BlendNormals: false
+  BlendShapes:
+    {}
+- !<RenderMeshVisual/ea4b92b4-c0f6-4569-9dd9-3052a27728d4>
+  PrefabRemaps:
+    []
+  Name: Render Mesh Visual
+  Enabled: true
+  RenderOrder: 0
+  StretchMode: Stretch
+  VerticalAlignment: Center
+  HorizontalAlignment: Center
+  MeshShadowMode: None
+  ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+  ShadowDensity: 1.000000
+  Materials:
+    - !<reference> 72423fa8-4432-40c9-9e69-b2912ae94fd2
+  Mesh: !<reference> d0ce0a01-44a2-4cf2-be63-c842e220806d
+  Skin: !<reference> 00000000-0000-0000-0000-000000000000
+  BlendShapesEnabled: true
+  BlendNormals: false
+  BlendShapes:
+    {}
