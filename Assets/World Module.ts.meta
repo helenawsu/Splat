@@ -25,15 +25,18 @@
   MaxVisibility: Editable
   ScriptInputsHidden:
     filterEnabled: false
+    hi: false
     targetObject: false
   ScriptTypesHidden:
     {}
   DefaultScriptInputs:
     - targetObject: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
       filterEnabled: false
+      hi: !<MappingBased.HandInteractor> 00000000-0000-0000-0000-000000000000
   ScriptTypes:
     -
       {}
   InputLines:
     - // @input SceneObject targetObject
     - // @input bool filterEnabled
+    - // @input HandInteractor hi

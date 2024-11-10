@@ -6,7 +6,7 @@ const InteractorTriggerType =
 const InteractorInputType =
   require('SpectaclesInteractionKit/Core/Interactor/Interactor').InteractorInputType;
 const EPSILON = 0.01;
-
+import { HandInteractor } from "SpectaclesInteractionKit/Core/HandInteractor/HandInteractor";
 @component
 export class NewScript extends BaseScriptComponent {
   private primaryInteractor;
@@ -18,6 +18,9 @@ export class NewScript extends BaseScriptComponent {
 
   @input
   filterEnabled: boolean;
+    
+    @input
+    hi : HandInteractor;
 
   onAwake() {
     // create new hit session
@@ -71,6 +74,11 @@ export class NewScript extends BaseScriptComponent {
       ) {
         // Called when a trigger ends
         // Copy the plane/axis object
+                print("cube created");
+//                      print(
+//        `The left hand has pinched. The tip of the left index finger is: ${this.hi.hand.indexTip.position}.`
+//      );
+
         this.sceneObject.copyWholeHierarchy(this.targetObject);
       }
     }

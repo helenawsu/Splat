@@ -40,7 +40,6 @@ Assets/**/*.depthStencilRenderTarget !filter !diff !merge text linguist-language
 Assets/**/*.depthTexture !filter !diff !merge text linguist-language=yaml merge=lens-studio-yaml-merge
 Assets/**/*.deviceCameraTexture !filter !diff !merge text linguist-language=yaml merge=lens-studio-yaml-merge
 Assets/**/*.deviceTrackingModule !filter !diff !merge text linguist-language=yaml merge=lens-studio-yaml-merge
-Assets/**/*.dialogModule !filter !diff !merge text linguist-language=yaml merge=lens-studio-yaml-merge
 Assets/**/*.faceCropTexture !filter !diff !merge text linguist-language=yaml merge=lens-studio-yaml-merge
 Assets/**/*.faceImagePickerTexture !filter !diff !merge text linguist-language=yaml merge=lens-studio-yaml-merge
 Assets/**/*.faceTexture !filter !diff !merge text linguist-language=yaml merge=lens-studio-yaml-merge
@@ -75,7 +74,6 @@ Assets/**/*.remoteMLAsset !filter !diff !merge text linguist-language=yaml merge
 Assets/**/*.remoteMediaModule !filter !diff !merge text linguist-language=yaml merge=lens-studio-yaml-merge
 Assets/**/*.remoteServiceModule !filter !diff !merge text linguist-language=yaml merge=lens-studio-yaml-merge
 Assets/**/*.renderTarget !filter !diff !merge text linguist-language=yaml merge=lens-studio-yaml-merge
-Assets/**/*.reverseCameraTexture !filter !diff !merge text linguist-language=yaml merge=lens-studio-yaml-merge
 Assets/**/*.scanModule !filter !diff !merge text linguist-language=yaml merge=lens-studio-yaml-merge
 Assets/**/*.scene !filter !diff !merge text linguist-language=yaml merge=lens-studio-yaml-merge
 Assets/**/*.scmarker !filter !diff !merge text linguist-language=yaml merge=lens-studio-yaml-merge

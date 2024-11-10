@@ -7698,6 +7698,7 @@
     "":
       targetObject: !<reference.SceneObject> bf144280-8677-446f-8993-37599d4460da
       filterEnabled: false
+      hi: !<MappingBased.HandInteractor> 24cf881f-0af4-45c8-97a1-e8d6a7511d5a
   ScriptTypes:
     "":
       {}
