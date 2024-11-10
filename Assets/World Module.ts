@@ -94,29 +94,29 @@ export class NewScript extends BaseScriptComponent {
        
   }
 
-  getRandomSplatSFX() {
-    // Generate a random integer between 1 and 4
-    var randomIndex = Math.floor(Math.random() * 4) + 1;
-    
-    if (randomIndex === this.prevSFXIndex) {
-      randomIndex = (randomIndex + 1) % 4;
-
-    this.prevSFXIndex = randomIndex;
-
-    // Return the corresponding splat sound effect based on the random number
-    switch (randomIndex) {
-        case 0:
-            return this.splatSFX1;
-        case 1:
-            return this.splatSFX2;
-        case 2:
-            return this.splatSFX3;
-        case 3:
-            return this.splatSFX4;
-        default:
-            return this.splatSFX1; // Fallback in case of any issues
+    getRandomSplatSFX() {
+      // Generate a random integer between 1 and 4
+      let randomIndex = Math.floor(Math.random() * 4) + 1;
+      
+      if (randomIndex === this.prevSFXIndex) {
+          randomIndex = (randomIndex % 4) + 1;
       }
-    }
+
+      this.prevSFXIndex = randomIndex;
+
+      // Return the corresponding splat sound effect based on the random number
+      switch (randomIndex) {
+          case 1:
+              return this.splatSFX1;
+          case 2:
+              return this.splatSFX2;
+          case 3:
+              return this.splatSFX3;
+          case 4:
+              return this.splatSFX4;
+          default:
+              return this.splatSFX1; // Fallback in case of any issues
+      }
   }
 
   onAwake() {
@@ -194,24 +194,46 @@ export class NewScript extends BaseScriptComponent {
       //set position and rotation
       this.targetObject.getTransform().setWorldPosition(hitPosition);
       this.targetObject.getTransform().setWorldRotation(toRotation);
-      var SCALE = 70;
+
+      var avgStrength = 0;
+      for (let i = 0; i < this.lastStrengths.length; i++) {
+        avgStrength += this.lastStrengths[i];
+      }
+
+      avgStrength /= this.lastStrengths.length;
+
+
+      function smoothQuadraticScale(avgStrength) {
+        let adjustedStrength;
+        
+        if (avgStrength <= 0.2) {
+            // Minimal growth for avgStrength between 0 and 0.2
+            adjustedStrength = avgStrength * 0.1;  // Scale down the effect drastically
+        } else {
+            // Quadratic scaling for avgStrength between 0.2 and 1
+            let normalizedStrength = (avgStrength - 0.2) / 0.8;  // Normalizes to 0-1 in the 0.2-1 range
+            adjustedStrength = 0.02 + normalizedStrength * normalizedStrength;  // Apply quadratic scaling
+        }
+    
+        // Map to the desired range
+        return 40 + adjustedStrength * 20;
+    }
+    
+    var SCALE = smoothQuadraticScale(avgStrength);
+    
       this.targetObject.getTransform().setWorldScale(new vec3(SCALE, SCALE, SCALE));
-      var strength = (this.audioAnalyzer as any).getStrength();
+      var instantaneousStrength = (this.audioAnalyzer as any).getStrength();
       print(this.soundCooldown);
-      print("sssttrrreeennngtthhhh"+ strength);
+      print("Avg Strength" + avgStrength);
       // if (
-      //   strength > 0.6 && this.soundCooldown < 0
+      //   instantaneousStrength > 0.6 && this.soundCooldown < 0
       // ) 
       if (
         (this.primaryInteractor.previousTrigger !== InteractorTriggerType.None &&
-        this.primaryInteractor.currentTrigger === InteractorTriggerType.None) ||  (strength > 0.6 && this.soundCooldown < 0)
+        this.primaryInteractor.currentTrigger === InteractorTriggerType.None) ||  (instantaneousStrength > 0.6 && this.soundCooldown < 0)
       )
       {
-        this.splatSFX = this.getRandomSplatSFX();
-
-
-        // init sound effects
-        this.splatSFX1.play(1); // Play the sound once
+        this.splatSFX.play(1); // Play the sound once
         this.soundCooldown = 20;
         
         // Called when a trigger ends
