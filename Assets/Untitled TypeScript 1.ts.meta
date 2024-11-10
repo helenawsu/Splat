@@ -1,0 +1,42 @@
+- !<AssetImportMetadata/6f96795e-bcaf-4a50-a9ae-5c6450d792c0>
+  ImportedAssetIds:
+    TypeScriptAsset: !<reference> cb3ceb33-8296-483e-a94b-7c04cd18dec6
+  ImporterName: TypeScriptAssetImporter
+  PrimaryAsset: !<reference> cb3ceb33-8296-483e-a94b-7c04cd18dec6
+  PackageType: NotAPackage
+  PackagePolicy: CannotBeUnpacked
+  AssetDataMap:
+    TypeScriptAsset: !<own> 76759951-abb7-460b-a189-d09f90722754
+  DependentFiles:
+    []
+  ImporterSettings: !<AssetImporterSettings/bf869e81-bb60-4304-9165-ac81f33a823f>
+    {}
+  CompressionSettings: !<own> 00000000-0000-0000-0000-000000000000
+- !<TypeScriptAssetData/76759951-abb7-460b-a189-d09f90722754>
+  SvgIcon: ""
+  Description: ""
+  InternalVersion: 0
+  VersionMajor: 0
+  VersionMinor: 0
+  VersionPatch: 0
+  ComponentUid: 00000000-0000-0000-0000-000000000000
+  ExportUid: 00000000-0000-0000-0000-000000000000
+  CurrentVisibility: Editable
+  MaxVisibility: Editable
+  ScriptInputsHidden:
+    audio: false
+    filterEnabled: false
+    targetObject: false
+  ScriptTypesHidden:
+    {}
+  DefaultScriptInputs:
+    - targetObject: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      filterEnabled: false
+      audio: !<reference.AudioComponent> 00000000-0000-0000-0000-000000000000
+  ScriptTypes:
+    -
+      {}
+  InputLines:
+    - // @input SceneObject targetObject
+    - // @input bool filterEnabled
+    - // @input Component.AudioComponent audio

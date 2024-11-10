@@ -1,0 +1,32 @@
+- !<NativePackageDescriptor/cb058169-e98e-459f-97ab-62f53b564fbe>
+  PackagePath: ""
+  StudioVersion:
+    major: 5
+    minor: 1
+    patch: 1
+    build: 24092500
+    type: Unset
+  Description: |-
+    The Speech Recognition Package demonstrates how you can use the Speech Recognition to incorporate transcription and keyword detection as well as voice navigation command detection based on basic natural language understanding into the Lenses. 
+    
+    Learn more: https://developers.snap.com/lens-studio/essential-skills/audio/speech-recognition
+  SvgIcon: ""
+  InternalVersion: 0
+  VersionMajor: 1
+  VersionMinor: 0
+  VersionPatch: 0
+  UpdateCheckpoint: 48
+  ExportUid: 42250219-cf31-4dff-a555-7a3c9fe06780
+  ComponentUid: f39e8824-6742-4786-9a5c-52e957153b62
+  CurrentVisibility: Editable
+  MaxVisibility: Editable
+  Instantiable: !<reference> 00000000-0000-0000-0000-000000000000
+  AssetLibraryDependencyStructure: !<AssetLibraryDependencyStructure/00000000-0000-0000-0000-000000000000>
+    Name: ""
+    AssetId: ""
+    Hash: ""
+    Version:
+      major: 0
+      minor: 0
+      patch: 0
+      build: 0
