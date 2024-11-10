@@ -217,38 +217,8 @@ export class HandInteractor extends BaseInteractor {
       super.updateState();
       this.updateTarget();
       this.updateDragVector();
-      const index_tip_pos = this.hand.indexTip.position;
-      const index_tip_rot = this.hand.indexTip.rotation;
-      const thumb_tip_pos = this.hand.thumbTip.position;
-      const thumb_tip_rot = this.hand.thumbTip.rotation;
-      const palm_pos = this.hand.getPalmCenter();
-      const mid_pos = this.hand.middleTip.position;
-      if (palm_pos != null)
-      {const dist = this.calculateDistance(index_tip_pos, thumb_tip_pos);
-      const dist2 = this.calculateDistance(palm_pos, mid_pos);
-        if (dist > 6.5 && dist2 < 1) {
-            // register as a hand gun gesture
-            print(
-                `making a gun. The distance between thumb and index pos is: ${dist}.`
-              );
-        }
-      }
-
-
-// // Example usage:
-// const vecA = { x: 1, y: 2, z: 3 };
-// const vecB = { x: 4, y: 6, z: 8 };
-// const distance = calculateDistance(vecA, vecB);
-// console.log(`Distance: ${distance}`);
-
   }
- calculateDistance(vecA, vecB) {
-    const dx = vecB.x - vecA.x;
-    const dy = vecB.y - vecA.y;
-    const dz = vecB.z - vecA.z;
 
-    return Math.sqrt(dx * dx + dy * dy + dz * dz);
-}
   protected clearDragProviders(): void {
       this.directDragProvider.clear();
       this.indirectDragProvider.clear();

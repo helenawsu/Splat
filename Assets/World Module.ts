@@ -1,12 +1,14 @@
 // import required modules
 const WorldQueryModule = require('LensStudio:WorldQueryModule');
-const SIK = require('SpectaclesInteractionKit/SIK').SIK;
+// const SIK = require('SpectaclesInteractionKit/SIK').SIK;
 const InteractorTriggerType =
   require('SpectaclesInteractionKit/Core/Interactor/Interactor').InteractorTriggerType;
 const InteractorInputType =
   require('SpectaclesInteractionKit/Core/Interactor/Interactor').InteractorInputType;
 const EPSILON = 0.01;
 import { HandInteractor } from "SpectaclesInteractionKit/Core/HandInteractor/HandInteractor";
+import { SIK } from './SpectaclesInteractionKit/SIK';
+
 @component
 export class NewScript extends BaseScriptComponent {
   private primaryInteractor;
@@ -83,11 +85,43 @@ export class NewScript extends BaseScriptComponent {
       }
     }
   }
+  calculateDistance(vecA, vecB) {
+    const dx = vecB.x - vecA.x;
+    const dy = vecB.y - vecA.y;
+    const dz = vecB.z - vecA.z;
 
+    return Math.sqrt(dx * dx + dy * dy + dz * dz);
+}
   onUpdate() {
     this.primaryInteractor =
       SIK.InteractionManager.getTargetingInteractors().shift();
+      let handInputData = SIK.HandInputData;
 
+      // Fetch the TrackedHand for left and right hands.
+      let leftHand = handInputData.getHand('left');
+      let rightHand = handInputData.getHand('right');
+      const index_tip_pos = rightHand.indexTip.position;
+      const index_tip_rot = rightHand.indexTip.rotation;
+      const thumb_tip_pos = rightHand.thumbTip.position;
+      const thumb_tip_rot = rightHand.thumbTip.rotation;
+      const palm_pos = rightHand.getPalmCenter();
+      const mid_pos = rightHand.middleTip.position;
+      if (palm_pos != null)
+
+      {
+        print("all distance registered")
+        const dist = this.calculateDistance(index_tip_pos, thumb_tip_pos);
+      const dist2 = this.calculateDistance(palm_pos, mid_pos);
+      // print(
+      //   `palm mid fing distance. The distance between thumb and index pos is: ${dist2}.`
+      // );
+        if (dist > 6.5 && dist2 < 4) {
+            // register as a hand gun gesture
+            print(
+                `making a gun. The distance between thumb and index pos is: ${dist}.`
+              );
+        }
+      }
     if (
       this.primaryInteractor &&
       this.primaryInteractor.isActive() &&

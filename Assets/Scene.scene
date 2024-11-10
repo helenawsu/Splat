@@ -5,6 +5,7 @@
     - !<own> 0005641c-028d-459a-0000-000000014b4d
     - !<own> 597f6fa4-23e5-4230-9e74-1ece142cd000
     - !<own> 1bfb793e-1d85-4e40-886e-1d506e713065
+    - !<own> 598de98d-e999-4651-847f-e7bae477a600
   layers: !<Layers/267ee9a7-aff2-4f9d-9a49-f71214747d03>
     userLayers:
       []
@@ -2392,6 +2393,22 @@
     - !<own> aef9ede0-0502-49e1-b39a-6597dc15eb77
   Components:
     []
+- !<ScriptComponent/40c48634-8fc7-4dde-b04d-19d2abb9c79c>
+  PrefabRemaps:
+    []
+  Name: hand data
+  Enabled: true
+  ScriptAsset: !<reference> e7558d47-4938-4520-b55d-ea87465c2b32
+  ScriptInputsDefault:
+    {}
+  ScriptTypesDefault:
+    {}
+  ScriptInputs:
+    "":
+      {}
+  ScriptTypes:
+    "":
+      {}
 - !<ScriptComponent/40e4ed78-d028-4674-9273-21ac8ee1b431>
   PrefabRemaps:
     []
@@ -3757,6 +3774,21 @@
     - !<own> 5dc2c882-655c-4e06-9e64-e7099c3f7b6e
   Components:
     []
+- !<SceneObject/598de98d-e999-4651-847f-e7bae477a600>
+  PrefabRemaps:
+    []
+  Name: hand data
+  Enabled: true
+  Layers: 1
+  LocalTransform:
+    position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    hasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> 40c48634-8fc7-4dde-b04d-19d2abb9c79c
 - !<SceneObject/598e25a0-875b-430a-87af-795706c7cfd3>
   PrefabRemaps:
     []
