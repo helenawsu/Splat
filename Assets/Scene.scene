@@ -6,6 +6,8 @@
     - !<own> 597f6fa4-23e5-4230-9e74-1ece142cd000
     - !<own> 1bfb793e-1d85-4e40-886e-1d506e713065
     - !<own> 598de98d-e999-4651-847f-e7bae477a600
+    - !<own> 240d877c-9258-4aee-b2ec-3159b6ac7a93
+    - !<own> 118fbeaf-4bd7-4459-ab2c-b26368914747
   layers: !<Layers/267ee9a7-aff2-4f9d-9a49-f71214747d03>
     userLayers:
       []
@@ -742,6 +744,21 @@
   ScriptTypes:
     "":
       {}
+- !<SceneObject/118fbeaf-4bd7-4459-ab2c-b26368914747>
+  PrefabRemaps:
+    []
+  Name: hand tracking
+  Enabled: true
+  Layers: 1
+  LocalTransform:
+    position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    hasSegmentScaleCompensation: false
+  Children:
+    - !<own> 5cc7a95e-78ca-43a6-9d95-7c9c6c73e624
+  Components:
+    - !<own> 8e3379ab-20ec-4f05-91bd-fdd777a10359
 - !<ScriptComponent/11e595bb-7f1c-4c88-8a83-08c31cf823c9>
   PrefabRemaps:
     []
@@ -1530,6 +1547,21 @@
   Components:
     - !<own> 95c14adc-87b7-4dbf-966d-9df0dfef0064
     - !<own> 2c10ed34-341d-44e5-8672-4de5c33a1054
+- !<SceneObject/240d877c-9258-4aee-b2ec-3159b6ac7a93>
+  PrefabRemaps:
+    []
+  Name: AudioAnalyzer
+  Enabled: true
+  Layers: 1
+  LocalTransform:
+    position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    hasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> b005ef03-8d9b-4bba-9231-63f7b28cc071
 - !<ScriptComponent/24cf881f-0af4-45c8-97a1-e8d6a7511d5a>
   PrefabRemaps:
     []
@@ -2045,6 +2077,26 @@
   Components:
     - !<own> 36f9049c-1f5c-4932-80d5-9918a0ad2942
     - !<own> 190712f0-7029-46eb-8fb8-5e3e5c6614d5
+- !<RenderMeshVisual/31ff0996-8687-4153-a10e-beaf0cb94cec>
+  PrefabRemaps:
+    []
+  Name: Render Mesh Visual
+  Enabled: true
+  RenderOrder: 0
+  StretchMode: Stretch
+  VerticalAlignment: Center
+  HorizontalAlignment: Center
+  MeshShadowMode: None
+  ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+  ShadowDensity: 1.000000
+  Materials:
+    - !<reference> ada1982a-9ce8-4b9f-a72c-4c380369eb4a
+  Mesh: !<reference> e542623c-1432-4bfa-881d-a28905bd9e57
+  Skin: !<reference> 00000000-0000-0000-0000-000000000000
+  BlendShapesEnabled: true
+  BlendNormals: false
+  BlendShapes:
+    {}
 - !<ScriptComponent/33735641-6061-4c01-a86c-362dca42fe6d>
   PrefabRemaps:
     []
@@ -3169,21 +3221,6 @@
     bottom: 0.000000
     right: 0.000000
     top: 0.000000
-- !<SceneObject/525ae7c9-828a-4e82-9901-dbd83908e4eb>
-  PrefabRemaps:
-    []
-  Name: hand tracking
-  Enabled: true
-  Layers: 1
-  LocalTransform:
-    position: {x: 0.000000, y: 0.000000, z: 0.000000}
-    rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
-    scale: {x: 1.000000, y: 1.000000, z: 1.000000}
-    hasSegmentScaleCompensation: false
-  Children:
-    - !<own> 7605adf5-8cdc-4fbd-becb-cbd9cfdd1ffd
-  Components:
-    - !<own> 720495c2-41a9-40d0-bc19-2f34d3035865
 - !<RenderMeshVisual/527f0a43-7b22-49f0-bb29-43ac1d291b51>
   PrefabRemaps:
     []
@@ -3855,7 +3892,7 @@
   PrefabRemaps:
     []
   Name: hand data
-  Enabled: true
+  Enabled: false
   Layers: 1
   LocalTransform:
     position: {x: 0.000000, y: 0.000000, z: 0.000000}
@@ -4028,6 +4065,21 @@
   ScriptTypes:
     "":
       {}
+- !<SceneObject/5cc7a95e-78ca-43a6-9d95-7c9c6c73e624>
+  PrefabRemaps:
+    []
+  Name: Box
+  Enabled: true
+  Layers: 1
+  LocalTransform:
+    position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    scale: {x: 10.000000, y: 10.000000, z: 10.000000}
+    hasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> 31ff0996-8687-4153-a10e-beaf0cb94cec
 - !<SceneObject/5d44fa57-b511-402f-aaed-b91e7405671c>
   PrefabRemaps:
     []
@@ -4564,23 +4616,6 @@
     - !<own> 2f145aeb-3474-4801-9be9-a9e670ea1d99
     - !<own> 11e595bb-7f1c-4c88-8a83-08c31cf823c9
     - !<own> fb8a80a0-d97b-4e5e-96f1-9fa72137c74e
-- !<ScriptComponent/720495c2-41a9-40d0-bc19-2f34d3035865>
-  PrefabRemaps:
-    []
-  Name: hand tracking
-  Enabled: true
-  ScriptAsset: !<reference> 98335d3c-e917-4376-86cd-252c763e0e13
-  ScriptInputsDefault:
-    {}
-  ScriptTypesDefault:
-    {}
-  ScriptInputs:
-    "":
-      visualSceneObject: !<reference.SceneObject> 7605adf5-8cdc-4fbd-becb-cbd9cfdd1ffd
-      rightHand: !<reference.HandTracking3DAsset> 554c9bb5-d715-4f23-ab9c-718541f17b33
-  ScriptTypes:
-    "":
-      {}
 - !<ScriptComponent/722d84a6-169a-4b3d-a104-fb2b2ce2388d>
   PrefabRemaps:
     []
@@ -4605,21 +4640,6 @@
   ScriptTypes:
     "":
       {}
-- !<SceneObject/724f0b74-4d1d-4340-9207-f668aa2f5e6a>
-  PrefabRemaps:
-    []
-  Name: AudioAnalyzer
-  Enabled: true
-  Layers: 1
-  LocalTransform:
-    position: {x: 0.000000, y: 0.000000, z: 0.000000}
-    rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
-    scale: {x: 1.000000, y: 1.000000, z: 1.000000}
-    hasSegmentScaleCompensation: false
-  Children:
-    []
-  Components:
-    - !<own> a5fbc245-48c1-4ed4-b20c-ad8ec8ec1996
 - !<SceneObject/732acdae-935a-4246-9369-aa21ee3e4a01>
   PrefabRemaps:
     []
@@ -4684,21 +4704,6 @@
     bottom: 0.000000
     right: 0.000000
     top: 0.000000
-- !<SceneObject/7605adf5-8cdc-4fbd-becb-cbd9cfdd1ffd>
-  PrefabRemaps:
-    []
-  Name: bullet preview
-  Enabled: true
-  Layers: 1
-  LocalTransform:
-    position: {x: 0.000000, y: 0.000000, z: 0.000000}
-    rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
-    scale: {x: 10.000000, y: 10.000000, z: 10.000000}
-    hasSegmentScaleCompensation: false
-  Children:
-    []
-  Components:
-    - !<own> f1f1b11e-c6fd-4b56-8c78-fe6eba62b081
 - !<SceneObject/7692d1fc-6ab8-4f1a-bc6c-9909d0b2f09b>
   PrefabRemaps:
     []
@@ -5652,6 +5657,23 @@
     - !<own> f852dbed-7b40-4ba4-a4b0-35ce409d097e
   Components:
     []
+- !<ScriptComponent/8e3379ab-20ec-4f05-91bd-fdd777a10359>
+  PrefabRemaps:
+    []
+  Name: hand tracking
+  Enabled: true
+  ScriptAsset: !<reference> 98335d3c-e917-4376-86cd-252c763e0e13
+  ScriptInputsDefault:
+    {}
+  ScriptTypesDefault:
+    {}
+  ScriptInputs:
+    "":
+      visualSceneObject: !<reference.SceneObject> 5cc7a95e-78ca-43a6-9d95-7c9c6c73e624
+      rightHand: !<reference.HandTracking3DAsset> 554c9bb5-d715-4f23-ab9c-718541f17b33
+  ScriptTypes:
+    "":
+      {}
 - !<SceneObject/8ee47586-e3a3-4c87-a312-8e5d3832b4f2>
   PrefabRemaps:
     []
@@ -6202,47 +6224,6 @@
   Components:
     - !<own> acbcbff6-eecf-4ebe-9fd5-91e7811fe8ca
     - !<own> fe4ee68b-14f6-482b-984b-ab140636ed94
-- !<ScriptComponent/a5fbc245-48c1-4ed4-b20c-ad8ec8ec1996>
-  PrefabRemaps:
-    []
-  Name: AudioAnalyzer
-  Enabled: true
-  ScriptAsset: !<reference> 9d24e00c-1606-4ad1-8726-57fe051518c9
-  ScriptInputsDefault:
-    inputType: true
-    audioTrack: true
-    playAudio: true
-    loops: true
-    audioComponent: true
-    audioInputScript: true
-    sampleRate: true
-    frameSize: true
-    hopSize: true
-    fftSize: true
-    numMel: true
-    minFreq: true
-    maxFreq: true
-  ScriptTypesDefault:
-    {}
-  ScriptInputs:
-    "":
-      inputType: 2
-      audioTrack: !<reference.AudioTrackAsset> 00000000-0000-0000-0000-000000000000
-      playAudio: false
-      loops: -1
-      microphoneAudio: !<reference.AudioTrackAsset> 7b5fea66-d886-4d83-9c55-a834f6bd3df6
-      audioComponent: !<reference.AudioComponent> 00000000-0000-0000-0000-000000000000
-      audioInputScript: !<reference.ScriptComponent> 00000000-0000-0000-0000-000000000000
-      sampleRate: 44100
-      frameSize: 512
-      hopSize: 128
-      fftSize: 2048
-      numMel: 8
-      minFreq: !<float> 0.000000
-      maxFreq: !<float> 12000.000000
-  ScriptTypes:
-    "":
-      {}
 - !<SceneObject/a677b29a-6a93-490a-8df1-19b2ca301293>
   PrefabRemaps:
     []
@@ -6600,6 +6581,45 @@
     - !<own> 79f133d3-5281-4b2f-aeae-3da9498768c8
   Components:
     []
+- !<ScriptComponent/b005ef03-8d9b-4bba-9231-63f7b28cc071>
+  PrefabRemaps:
+    []
+  Name: AudioAnalyzer
+  Enabled: true
+  ScriptAsset: !<reference> fea48859-cf9c-4d7f-98e0-128250dbdeb6
+  ScriptInputsDefault:
+    playAudio: true
+    loops: true
+    audioComponent: true
+    audioInputScript: true
+    sampleRate: true
+    frameSize: true
+    hopSize: true
+    fftSize: true
+    numMel: true
+    minFreq: true
+    maxFreq: true
+  ScriptTypesDefault:
+    {}
+  ScriptInputs:
+    "":
+      inputType: 2
+      audioTrack: !<reference.AudioTrackAsset> 7b5fea66-d886-4d83-9c55-a834f6bd3df6
+      playAudio: false
+      loops: -1
+      microphoneAudio: !<reference.AudioTrackAsset> 7b5fea66-d886-4d83-9c55-a834f6bd3df6
+      audioComponent: !<reference.AudioComponent> 00000000-0000-0000-0000-000000000000
+      audioInputScript: !<reference.ScriptComponent> 00000000-0000-0000-0000-000000000000
+      sampleRate: 44100
+      frameSize: 512
+      hopSize: 128
+      fftSize: 2048
+      numMel: 8
+      minFreq: !<float> 0.000000
+      maxFreq: !<float> 12000.000000
+  ScriptTypes:
+    "":
+      {}
 - !<SceneObject/b05a07c1-cae6-496c-adee-affec6f8baaf>
   PrefabRemaps:
     []
@@ -8013,7 +8033,7 @@
       splatObject5: !<reference.SceneObject> bdaf7291-51f1-4ea8-850d-2259cf51edd9
       splatObject6: !<reference.SceneObject> b91c2f06-2be0-43cf-bfd7-b96cf4700e2b
       filterEnabled: false
-      audioAnalyzer: !<reference.ScriptComponent> a5fbc245-48c1-4ed4-b20c-ad8ec8ec1996
+      audioAnalyzer: !<reference.ScriptComponent> b005ef03-8d9b-4bba-9231-63f7b28cc071
       audio: !<reference.AudioComponent> 958898eb-3edb-4162-b1cd-fbdf44614d68
   ScriptTypes:
     "":

@@ -16,6 +16,7 @@ export class NewScript extends BaseScriptComponent {
   private hitTestSession;
   private transform: Transform;
   private tick;
+  private soundCooldown;
   private targetObject: SceneObject;
 
   @input
@@ -67,6 +68,7 @@ export class NewScript extends BaseScriptComponent {
 
   onAwake() {
 
+    this.soundCooldown = 0;
     this.targetObject = this.getRandomSplatObject();
 
     this.tick = 0;
@@ -122,14 +124,15 @@ export class NewScript extends BaseScriptComponent {
       this.targetObject.getTransform().setWorldPosition(hitPosition);
       this.targetObject.getTransform().setWorldRotation(toRotation);
       this.targetObject.getTransform().setWorldScale(new vec3(50, 50, 50));
-
+      var strength = (this.audioAnalyzer as any).getStrength();
+      print(this.soundCooldown);
+      print("sssttrrreeennngtthhhh"+ strength);
       if (
-        this.primaryInteractor.previousTrigger !== InteractorTriggerType.None &&
-        this.primaryInteractor.currentTrigger === InteractorTriggerType.None
+        strength > 0.4 && this.soundCooldown < 0
       ) {
-
+        
         print("blah");
-
+        this.soundCooldown = 20;
         // Called when a trigger ends
         // Copy the plane/axis object
         this.audio.spatialAudio.enabled = true;
@@ -142,7 +145,6 @@ export class NewScript extends BaseScriptComponent {
         //this.audio.stop(true);  // true for fade out
         
         this.sceneObject.copyWholeHierarchy(this.targetObject);
-        this.targetObject = this.getRandomSplatObject();
       }
     }
   }
@@ -157,6 +159,7 @@ export class NewScript extends BaseScriptComponent {
   onUpdate() {
 
     this.tick++;
+    this.soundCooldown--;
 
     //@input SceneObject targetObject
 
