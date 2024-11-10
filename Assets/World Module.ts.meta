@@ -27,28 +27,19 @@
     audio: false
     audioAnalyzer: false
     filterEnabled: false
-    splatObject1: false
-    splatObject2: false
-    splatObject3: false
-    splatObject4: false
-    splatObject5: false
-    splatObject6: false
+    targetObject: false
   ScriptTypesHidden:
     {}
   DefaultScriptInputs:
-    - filterEnabled: false
+    - targetObject: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      filterEnabled: false
       audio: !<reference.AudioComponent> 00000000-0000-0000-0000-000000000000
       audioAnalyzer: !<reference.ScriptComponent> 00000000-0000-0000-0000-000000000000
   ScriptTypes:
     -
       {}
   InputLines:
-    - // @input SceneObject splatObject1
-    - // @input SceneObject splatObject2
-    - // @input SceneObject splatObject3
-    - // @input SceneObject splatObject4
-    - // @input SceneObject splatObject5
-    - // @input SceneObject splatObject6
+    - // @input SceneObject targetObject
     - // @input bool filterEnabled
     - // @input Component.ScriptComponent audioAnalyzer
     - // @input Component.AudioComponent audio

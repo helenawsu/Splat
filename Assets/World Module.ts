@@ -155,7 +155,37 @@ export class NewScript extends BaseScriptComponent {
 
     return Math.sqrt(dx * dx + dy * dy + dz * dz);
 }
+  
+  hueFloatToHsv(hue) {
+    return {"h": hue, "s": 1, "v": 1}
+    //return new vec4(, , , 1);
+    // return new vec4(x % 255 / 255, x / 255 % 255 / 255, x / (255 * 255) % 255 / 255, 10);
+  }
     
+  hsvToRgb(hsv) { 
+    var r, g, b, i, f, p, q, t, s, v, h;
+    print(hsv)
+    if (hsv) {
+        s = hsv.s, v = hsv.v, h = hsv.h;
+    }
+    i = Math.floor(h * 6);
+    f = h * 6 - i;
+    p = v * (1 - s);
+    q = v * (1 - f * s);
+    t = v * (1 - (1 - f) * s);
+        
+    switch (i % 6) {
+        case 0: r = v, g = t, b = p; break;
+        case 1: r = q, g = v, b = p; break;
+        case 2: r = p, g = v, b = t; break;
+        case 3: r = p, g = q, b = v; break;
+        case 4: r = t, g = p, b = v; break;
+        case 5: r = v, g = p, b = q; break;
+    }
+        
+    return new vec4(r, g, b, 1)
+  }
+  
   onUpdate() {
 
     this.tick++;
@@ -205,7 +235,16 @@ export class NewScript extends BaseScriptComponent {
       this.primaryInteractor.isTargeting()
     ) {
       const strength = (this.audioAnalyzer as any).getStrength();
-      const hue = (this.audioAnalyzer as any).getHue();
+      const hue_float = (this.audioAnalyzer as any).getHue();
+            
+      if (strength > 0) {
+        const hue = this.hsvToRgb(this.hueFloatToHsv(hue_float));
+        var preVisual = this.targetObject.getComponent("Component.RenderMeshVisual");
+        var newMat = preVisual.mainMaterial.clone(); 
+        newMat.mainPass.baseColor = hue; 
+        preVisual.mainMaterial = newMat;
+      }            
+            
      const rayStartOffset = new vec3(
         this.primaryInteractor.startPoint.x,
         this.primaryInteractor.startPoint.y,
