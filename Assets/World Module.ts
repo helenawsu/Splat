@@ -12,6 +12,7 @@ export class NewScript extends BaseScriptComponent {
   private primaryInteractor;
   private hitTestSession;
   private transform: Transform;
+  private tick;
 
   @input
   targetObject: SceneObject;
@@ -23,6 +24,9 @@ export class NewScript extends BaseScriptComponent {
   audio: AudioComponent;
 
   onAwake() {
+
+    this.tick = 0;
+
     // create new hit session
     this.hitTestSession = this.createHitTestSession(this.filterEnabled);
     if (!this.sceneObject) {
@@ -98,6 +102,18 @@ export class NewScript extends BaseScriptComponent {
   }
 
   onUpdate() {
+
+    this.tick++;
+
+    //@input SceneObject targetObject
+
+    var renderMeshVisual = this.targetObject.getComponent("Component.RenderMeshVisual");
+   {
+        var newMaterial = renderMeshVisual.mainMaterial.clone();
+        newMaterial.mainPass.baseColor = new vec4(Math.sin(this.tick / 100), 1.0, 1.0, 1.0);
+        renderMeshVisual.mainMaterial = newMaterial;
+    }
+
     this.primaryInteractor =
       SIK.InteractionManager.getTargetingInteractors().shift();
     if (
