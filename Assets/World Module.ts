@@ -191,7 +191,8 @@ export class NewScript extends BaseScriptComponent {
       //set position and rotation
       this.targetObject.getTransform().setWorldPosition(hitPosition);
       this.targetObject.getTransform().setWorldRotation(toRotation);
-      this.targetObject.getTransform().setWorldScale(new vec3(50, 50, 50));
+      var SCALE = 30;
+      this.targetObject.getTransform().setWorldScale(new vec3(SCALE, SCALE, SCALE));
       var strength = (this.audioAnalyzer as any).getStrength();
       print(this.soundCooldown);
       print("sssttrrreeennngtthhhh"+ strength);
