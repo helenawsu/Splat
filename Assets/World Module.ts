@@ -45,6 +45,9 @@ export class NewScript extends BaseScriptComponent {
   @input
   splatSFX4: AudioComponent;
   private prevSFXIndex: number;
+  
+  @input
+  paintDropsVFX: VFXAsset;
 
   @input
   filterEnabled: boolean;
@@ -88,6 +91,7 @@ export class NewScript extends BaseScriptComponent {
         default:
             return this.splatObject1; // Fallback in case of any issues
     }
+       
   }
 
   getRandomSplatSFX() {
@@ -116,7 +120,6 @@ export class NewScript extends BaseScriptComponent {
   }
 
   onAwake() {
-
     this.soundCooldown = 0;
     this.targetObject = this.getRandomSplatObject();
     this.splatSFX = this.getRandomSplatSFX();
@@ -213,7 +216,15 @@ export class NewScript extends BaseScriptComponent {
         
         // Called when a trigger ends
         // Copy the plane/axis object
-        this.sceneObject.copyWholeHierarchy(this.targetObject);
+        const newSplat = this.sceneObject.copyWholeHierarchy(this.targetObject);
+        newSplat.getChild(0).enabled = true;
+        this.delayedCallback(0.5, () => {
+                    newSplat.getChild(0).enabled = false
+                })
+        // Get child (particle system) default disabled
+        // enable its attributes
+        // re-disable after 0.2 seconds
+        // print(this.paintDropsVFX.properties.getTypeName())      
         this.targetObject = this.getRandomSplatObject();
         this.splatSFX = this.getRandomSplatSFX();
       }
@@ -256,6 +267,13 @@ export class NewScript extends BaseScriptComponent {
     }
         
     return new vec4(r, g, b, 1)
+  }
+    
+  delayedCallback(delay, callback) {
+        var event = this.createEvent("DelayedCallbackEvent");
+        event.bind(callback);
+        event.reset(delay);
+        return event;
   }
   
   onUpdate() {
