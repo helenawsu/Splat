@@ -1,15 +1,89 @@
-- !<ObjectPrefab/870b7a50-6d1c-49e9-8fb7-27be23eeda11>
+- !<ObjectPrefab/03da7145-8ad0-4765-bcdf-9d299c05f0d1>
   PackagePath: Audio_Analyzer__PLACE_IN_OBJECTS_PANEL
   objects:
-    - !<own> e90b1357-e75f-4d77-b399-61e2d7056622
+    - !<own> 731fd4f8-c474-49d2-b37f-420c4991ed8d
   LazyLoading: false
   RetainAssets: true
-- !<ScriptComponent/13f537c7-c7d7-43ae-9681-f16baea5c4ed>
+- !<SceneObject/020465c4-7889-4ffc-ba35-4f99ea1ac0f1>
+  PrefabRemaps:
+    []
+  Name: Beats
+  Enabled: true
+  Layers: 1
+  LocalTransform:
+    position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    rotation: {x: 0.000000, y: -0.000000, z: 0.000000}
+    scale: {x: 0.250000, y: 0.250000, z: 0.250000}
+    hasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> b3fbe5f2-7e68-4397-a40b-230e4927b0c6
+    - !<own> d066812e-52bf-439b-b53e-742c2204004f
+- !<SceneObject/731fd4f8-c474-49d2-b37f-420c4991ed8d>
+  PrefabRemaps:
+    []
+  Name: Audio Analyzer__PLACE_IN_OBJECTS_PANEL
+  Enabled: true
+  Layers: 1
+  LocalTransform:
+    position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    hasSegmentScaleCompensation: false
+  Children:
+    - !<own> 020465c4-7889-4ffc-ba35-4f99ea1ac0f1
+  Components:
+    - !<own> e80f6c72-ad90-4500-bc6c-b6a8b59315ae
+- !<RenderMeshVisual/b3fbe5f2-7e68-4397-a40b-230e4927b0c6>
+  PrefabRemaps:
+    []
+  Name: Render Mesh Visual
+  Enabled: true
+  RenderOrder: 0
+  StretchMode: Stretch
+  VerticalAlignment: Center
+  HorizontalAlignment: Center
+  MeshShadowMode: None
+  ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+  ShadowDensity: 1.000000
+  Materials:
+    - !<reference> df66b797-73bc-4dc7-9397-84c9be36ffc9
+  Mesh: !<reference> 4940929b-11d7-4263-9b34-b5f18102b3d4
+  Skin: !<reference> 00000000-0000-0000-0000-000000000000
+  BlendShapesEnabled: true
+  BlendNormals: false
+  BlendShapes:
+    {}
+  RayTracing: !<RayTracingVisualSettings/00000000-0000-0000-0000-000000000000>
+    Reflections:
+      caster: false
+      receiver: false
+      receiverLayers: 1
+      planar:
+        enabled: true
+        roughHarden: 0.500000
+        roughCurve: 2.000000
+    IndirectDiffuse:
+      caster: false
+      receiver: false
+      receiverLayers: 1
+    AmbientOcclusion:
+      caster: false
+      receiver: false
+      receiverLayers: 1
+    Shadows:
+      caster: false
+      receiver: false
+      receiverLayers: 1
+    Material: !<reference> 00000000-0000-0000-0000-000000000000
+    HideFromCamera: false
+- !<ScriptComponent/d066812e-52bf-439b-b53e-742c2204004f>
   PrefabRemaps:
     []
   Name: AudioAnalyzerHelper
   Enabled: true
-  ScriptAsset: !<reference> b36b8cc4-9c23-4619-842e-76b6c38c928d
+  ScriptAsset: !<reference> e393f829-e382-44e1-ba71-22408eee6989
   ScriptInputsDefault:
     index: true
     lerpCoef: true
@@ -53,7 +127,7 @@
     {}
   ScriptInputs:
     "":
-      audioAnalyzerScript: !<reference.ScriptComponent> 352d35cd-340c-4ec9-b3e3-f2e46e35cf66
+      audioAnalyzerScript: !<reference.ScriptComponent> e80f6c72-ad90-4500-bc6c-b6a8b59315ae
       bandType: 2
       index: 0
       smoothType: 1
@@ -71,7 +145,7 @@
       blendshapeName: ""
       startWeight: !<float> 0.000000
       endWeight: !<float> 1.000000
-      asset: !<reference.Asset> 8cfd920f-7289-4f67-bf1c-c3f44bc71020
+      asset: !<reference.Asset> df66b797-73bc-4dc7-9397-84c9be36ffc9
       parameter: floatArray
       assetValueType: 0
       startAssetFloat: !<float> 0.000000
@@ -106,12 +180,12 @@
   ScriptTypes:
     "":
       {}
-- !<ScriptComponent/352d35cd-340c-4ec9-b3e3-f2e46e35cf66>
+- !<ScriptComponent/e80f6c72-ad90-4500-bc6c-b6a8b59315ae>
   PrefabRemaps:
     []
   Name: AudioAnalyzer
   Enabled: true
-  ScriptAsset: !<reference> fea48859-cf9c-4d7f-98e0-128250dbdeb6
+  ScriptAsset: !<reference> 9d24e00c-1606-4ad1-8726-57fe051518c9
   ScriptInputsDefault:
     inputType: true
     loops: true
@@ -127,8 +201,8 @@
     {}
   ScriptInputs:
     "":
-      inputType: 1
-      audioTrack: !<reference.AudioTrackAsset> 77b6294a-e8ed-417f-a722-2eee23c4f810
+      inputType: 2
+      audioTrack: !<reference.AudioTrackAsset> 1fb755d2-25f7-4ee3-a80c-e5c8deabc5e6
       playAudio: true
       loops: -1
       microphoneAudio: !<reference.AudioTrackAsset> 00000000-0000-0000-0000-000000000000
@@ -144,77 +218,3 @@
   ScriptTypes:
     "":
       {}
-- !<SceneObject/69a16a03-9ba8-474e-a1db-d96d14300894>
-  PrefabRemaps:
-    []
-  Name: Beats
-  Enabled: true
-  Layers: 1
-  LocalTransform:
-    position: {x: 0.000000, y: 0.000000, z: 0.000000}
-    rotation: {x: 0.000000, y: -0.000000, z: 0.000000}
-    scale: {x: 0.250000, y: 0.250000, z: 0.250000}
-    hasSegmentScaleCompensation: false
-  Children:
-    []
-  Components:
-    - !<own> ec979955-b0fc-4ab6-a33a-542f7a678123
-    - !<own> 13f537c7-c7d7-43ae-9681-f16baea5c4ed
-- !<SceneObject/e90b1357-e75f-4d77-b399-61e2d7056622>
-  PrefabRemaps:
-    []
-  Name: Audio Analyzer__PLACE_IN_OBJECTS_PANEL
-  Enabled: true
-  Layers: 1
-  LocalTransform:
-    position: {x: 0.000000, y: 0.000000, z: 0.000000}
-    rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
-    scale: {x: 1.000000, y: 1.000000, z: 1.000000}
-    hasSegmentScaleCompensation: false
-  Children:
-    - !<own> 69a16a03-9ba8-474e-a1db-d96d14300894
-  Components:
-    - !<own> 352d35cd-340c-4ec9-b3e3-f2e46e35cf66
-- !<RenderMeshVisual/ec979955-b0fc-4ab6-a33a-542f7a678123>
-  PrefabRemaps:
-    []
-  Name: Render Mesh Visual
-  Enabled: true
-  RenderOrder: 0
-  StretchMode: Stretch
-  VerticalAlignment: Center
-  HorizontalAlignment: Center
-  MeshShadowMode: None
-  ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
-  ShadowDensity: 1.000000
-  Materials:
-    - !<reference> 8cfd920f-7289-4f67-bf1c-c3f44bc71020
-  Mesh: !<reference> 1cb395f2-d94d-4889-8bf5-726a43c08896
-  Skin: !<reference> 00000000-0000-0000-0000-000000000000
-  BlendShapesEnabled: true
-  BlendNormals: false
-  BlendShapes:
-    {}
-  RayTracing: !<RayTracingVisualSettings/00000000-0000-0000-0000-000000000000>
-    Reflections:
-      caster: false
-      receiver: false
-      receiverLayers: 1
-      planar:
-        enabled: true
-        roughHarden: 0.500000
-        roughCurve: 2.000000
-    IndirectDiffuse:
-      caster: false
-      receiver: false
-      receiverLayers: 1
-    AmbientOcclusion:
-      caster: false
-      receiver: false
-      receiverLayers: 1
-    Shadows:
-      caster: false
-      receiver: false
-      receiverLayers: 1
-    Material: !<reference> 00000000-0000-0000-0000-000000000000
-    HideFromCamera: false

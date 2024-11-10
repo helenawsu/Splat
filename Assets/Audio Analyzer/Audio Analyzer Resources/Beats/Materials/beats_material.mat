@@ -1,8 +1,8 @@
-- !<Material/8cfd920f-7289-4f67-bf1c-c3f44bc71020>
+- !<Material/df66b797-73bc-4dc7-9397-84c9be36ffc9>
   PackagePath: Audio Analyzer Resources/Beats/Materials/beats_material
   PassesInfo:
-    - !<own> ea139c16-c736-46b2-8e5e-07c87ac47ee7
-- !<PassInfo/ea139c16-c736-46b2-8e5e-07c87ac47ee7>
+    - !<own> 48308141-fec4-4ff8-9a17-e5f6e46aa956
+- !<PassInfo/48308141-fec4-4ff8-9a17-e5f6e46aa956>
   DepthWrite: true
   DepthTest: true
   DepthFunction: LessEqual
@@ -95,4 +95,4 @@
     spacing:
       typeIdx: 1
       value: 14.760000
-  Pass: !<reference> b33f04e8-f376-4456-918a-2c4949ac1559
+  Pass: !<reference> 6923ba36-0cab-44b2-be3e-e9f2801aecb7

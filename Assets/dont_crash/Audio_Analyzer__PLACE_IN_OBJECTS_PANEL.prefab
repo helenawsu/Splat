@@ -1,15 +1,15 @@
-- !<ObjectPrefab/9fa54d65-0b70-4258-909a-e5d5ed168a0e>
+- !<ObjectPrefab/8d912655-9672-4040-8e4b-9f5bc13c9052>
   PackagePath: Audio_Analyzer__PLACE_IN_OBJECTS_PANEL
   objects:
-    - !<own> 7333df63-fa1b-444c-93f9-ae8eb59da75a
+    - !<own> c5145dcf-5fb1-4e3c-a015-f6e634efe3e2
   LazyLoading: false
   RetainAssets: true
-- !<ScriptComponent/1b754260-2bbb-4f5b-afdf-dff52d2cfa5f>
+- !<ScriptComponent/03f3e0be-de08-4eb2-ab0d-00f2d2fd6c64>
   PrefabRemaps:
     []
   Name: AudioAnalyzerHelper
   Enabled: true
-  ScriptAsset: !<reference> a3d69608-b9b0-4095-a8f3-5b88dcb43b7c
+  ScriptAsset: !<reference> 55f2098c-c059-4bf2-847d-1d94e1bdd061
   ScriptInputsDefault:
     index: true
     lerpCoef: true
@@ -53,7 +53,7 @@
     {}
   ScriptInputs:
     "":
-      audioAnalyzerScript: !<reference.ScriptComponent> 9523179b-7512-4e60-a26c-f8c50e5c93c1
+      audioAnalyzerScript: !<reference.ScriptComponent> 25932dd2-72c3-4834-b6d1-6453997ba6b7
       bandType: 2
       index: 0
       smoothType: 1
@@ -71,7 +71,7 @@
       blendshapeName: ""
       startWeight: !<float> 0.000000
       endWeight: !<float> 1.000000
-      asset: !<reference.Asset> 1a251099-1f36-479a-87f7-1bf7f33e6f14
+      asset: !<reference.Asset> acce8fcd-0212-4da0-aa19-aee3d93387e7
       parameter: floatArray
       assetValueType: 0
       startAssetFloat: !<float> 0.000000
@@ -106,7 +106,61 @@
   ScriptTypes:
     "":
       {}
-- !<RenderMeshVisual/20e0f983-f8b9-4ff4-9876-94bb4aeca473>
+- !<ScriptComponent/25932dd2-72c3-4834-b6d1-6453997ba6b7>
+  PrefabRemaps:
+    []
+  Name: AudioAnalyzer
+  Enabled: true
+  ScriptAsset: !<reference> 5329279d-417e-46ed-a465-c39eca2a06c7
+  ScriptInputsDefault:
+    inputType: true
+    loops: true
+    microphoneAudio: true
+    audioComponent: true
+    audioInputScript: true
+    frameSize: true
+    hopSize: true
+    fftSize: true
+    numMel: true
+    minFreq: true
+  ScriptTypesDefault:
+    {}
+  ScriptInputs:
+    "":
+      inputType: 1
+      audioTrack: !<reference.AudioTrackAsset> 1cba17c6-78dc-4a78-b140-2af495415dc4
+      playAudio: true
+      loops: -1
+      microphoneAudio: !<reference.AudioTrackAsset> 00000000-0000-0000-0000-000000000000
+      audioComponent: !<reference.AudioComponent> 00000000-0000-0000-0000-000000000000
+      audioInputScript: !<reference.ScriptComponent> 00000000-0000-0000-0000-000000000000
+      sampleRate: 16000
+      frameSize: 512
+      hopSize: 128
+      fftSize: 2048
+      numMel: 8
+      minFreq: !<float> 0.000000
+      maxFreq: !<float> 8000.000000
+  ScriptTypes:
+    "":
+      {}
+- !<SceneObject/44b82efd-aa4e-461a-b04f-04678e9f73d1>
+  PrefabRemaps:
+    []
+  Name: Beats
+  Enabled: true
+  Layers: 1
+  LocalTransform:
+    position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    rotation: {x: 0.000000, y: -0.000000, z: 0.000000}
+    scale: {x: 0.250000, y: 0.250000, z: 0.250000}
+    hasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> b38def48-01d2-4756-876d-2427e0516263
+    - !<own> 03f3e0be-de08-4eb2-ab0d-00f2d2fd6c64
+- !<RenderMeshVisual/b38def48-01d2-4756-876d-2427e0516263>
   PrefabRemaps:
     []
   Name: Render Mesh Visual
@@ -119,8 +173,8 @@
   ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
   ShadowDensity: 1.000000
   Materials:
-    - !<reference> 1a251099-1f36-479a-87f7-1bf7f33e6f14
-  Mesh: !<reference> e332c6bf-fd7e-49dd-9aef-b942c0def855
+    - !<reference> acce8fcd-0212-4da0-aa19-aee3d93387e7
+  Mesh: !<reference> aaf1a73b-09f9-42c7-bb7b-91066e536b94
   Skin: !<reference> 00000000-0000-0000-0000-000000000000
   BlendShapesEnabled: true
   BlendNormals: false
@@ -149,23 +203,7 @@
       receiverLayers: 1
     Material: !<reference> 00000000-0000-0000-0000-000000000000
     HideFromCamera: false
-- !<SceneObject/57c89a8b-a0bb-46c0-bc07-557865a84e4a>
-  PrefabRemaps:
-    []
-  Name: Beats
-  Enabled: true
-  Layers: 1
-  LocalTransform:
-    position: {x: 0.000000, y: 0.000000, z: 0.000000}
-    rotation: {x: 0.000000, y: -0.000000, z: 0.000000}
-    scale: {x: 0.250000, y: 0.250000, z: 0.250000}
-    hasSegmentScaleCompensation: false
-  Children:
-    []
-  Components:
-    - !<own> 20e0f983-f8b9-4ff4-9876-94bb4aeca473
-    - !<own> 1b754260-2bbb-4f5b-afdf-dff52d2cfa5f
-- !<SceneObject/7333df63-fa1b-444c-93f9-ae8eb59da75a>
+- !<SceneObject/c5145dcf-5fb1-4e3c-a015-f6e634efe3e2>
   PrefabRemaps:
     []
   Name: Audio Analyzer__PLACE_IN_OBJECTS_PANEL
@@ -177,44 +215,6 @@
     scale: {x: 1.000000, y: 1.000000, z: 1.000000}
     hasSegmentScaleCompensation: false
   Children:
-    - !<own> 57c89a8b-a0bb-46c0-bc07-557865a84e4a
+    - !<own> 44b82efd-aa4e-461a-b04f-04678e9f73d1
   Components:
-    - !<own> 9523179b-7512-4e60-a26c-f8c50e5c93c1
-- !<ScriptComponent/9523179b-7512-4e60-a26c-f8c50e5c93c1>
-  PrefabRemaps:
-    []
-  Name: AudioAnalyzer
-  Enabled: true
-  ScriptAsset: !<reference> f8a21cef-053b-4c43-9978-353beedd6b13
-  ScriptInputsDefault:
-    inputType: true
-    loops: true
-    microphoneAudio: true
-    audioComponent: true
-    audioInputScript: true
-    frameSize: true
-    hopSize: true
-    fftSize: true
-    numMel: true
-    minFreq: true
-  ScriptTypesDefault:
-    {}
-  ScriptInputs:
-    "":
-      inputType: 1
-      audioTrack: !<reference.AudioTrackAsset> 415281c8-3042-428c-9182-9a8ea58bed29
-      playAudio: true
-      loops: -1
-      microphoneAudio: !<reference.AudioTrackAsset> 00000000-0000-0000-0000-000000000000
-      audioComponent: !<reference.AudioComponent> 00000000-0000-0000-0000-000000000000
-      audioInputScript: !<reference.ScriptComponent> 00000000-0000-0000-0000-000000000000
-      sampleRate: 16000
-      frameSize: 512
-      hopSize: 128
-      fftSize: 2048
-      numMel: 8
-      minFreq: !<float> 0.000000
-      maxFreq: !<float> 8000.000000
-  ScriptTypes:
-    "":
-      {}
+    - !<own> 25932dd2-72c3-4834-b6d1-6453997ba6b7

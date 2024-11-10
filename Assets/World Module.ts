@@ -54,6 +54,7 @@ export class NewScript extends BaseScriptComponent {
     if (results === null) {
       this.targetObject.enabled = false;
     } else {
+            
       this.targetObject.enabled = true;
       // get hit information
       const hitPosition = results.position;

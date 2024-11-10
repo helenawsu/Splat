@@ -97,10 +97,13 @@ function process() {
     TensorMath.clamp(melSpectrogramData, MIN_LEVEL, MAX_LEVEL, melSpectrogramData);
     TensorMath.addScalar(melSpectrogramData, NORMALIZE_ADD, melSpectrogramData);
     TensorMath.mulScalar(melSpectrogramData, NORMALIZE_MULT, melSpectrogramData);
+    
     TensorMath.sum(melSpectrogramData, melSpectrogramShape, SUM_AXIS, bands);
     TensorMath.mulScalar(bands, 1.0 / melSpectrogramShape.y, bands);
+    
     //add sum axis
     TensorMath.sum(bands, bandsShape, SUM_AXIS, average);
+    
     for (var i = 0; i < numMel; i++) {
         bandsArray[i] = bands[i];
     }
@@ -236,6 +239,7 @@ function setInput(input, inputSampleRate, loops) {
     sampleRate = inputSampleRate;
     
     if (input.isOfType("Asset.AudioTrackAsset")) {
+        print("audio track!");
         var control = input.control;
         if (control.isOfType("Provider.MicrophoneAudioProvider")) {
 
@@ -322,40 +326,54 @@ script.api.getSampleRate = getSampleRate;
 //sets input
 script.api.setInput = setInput;
 
-// Assuming 'audioAnalyzerScript' is the script component with 'AudioAnalyzer.js' attached
-var audioAnalyzer = script.audioAnalyzerScript; // Replace with actual reference to the script component
+// =================== do not modify what's above!!!!!! =================== \\
 
-// Ensure the audio analyzer is initialized and has audio input
-audioAnalyzer.api.setInput(script.audioAnalyzerInput); // Replace with the actual input reference
 
+// custom shit
 function splat(strength, hue) {
-    print("splatting! ");
-} 
+    print(strength + " " + hue);
+}
 
-// Function to process audio data and call splat()
+function melToHz(mel) {
+    return 700 * (Math.pow(10, mel / 2595) - 1);
+}
+
+function melToNoteValue(bands, numBands) {
+   // Sum the mel values to find the average position
+  let totalMelValue = 0;
+  for (let i = 0; i < numBands; i++) {
+    totalMelValue += bands[i];
+  }
+
+  // Compute the average mel value (assuming mel values are normalized 0 to 1)
+  let averageMelValue = totalMelValue / numBands;
+
+  // Scale the average mel value to the range of an octave (0 to 1, representing C to B)
+  const numNotesInOctave = 12;
+  const noteValue = (averageMelValue * numNotesInOctave) % numNotesInOctave;
+
+  // Normalize the note value to a float between 0 and 1
+  const normalizedNoteValue = noteValue / numNotesInOctave;
+
+  return normalizedNoteValue;
+}
+// Custom function to analyze audio and map strength and hue
 function analyzeAudioAndSplat() {
-    print("here");
-    var bands = audioAnalyzer.api.getBands();
-    var numBands = audioAnalyzer.api.getNumMel();
+    var bands = getBands();
+    var numBands = getNumMel();
     
+    //print("bands ==========")
+    //for (var i = 0 ; i < numBands; i++) {
+      //  print(bands[i])
+       // print(melToHz(bands[i]))
+    //}
     // Calculate the average volume from the bands
-    var averageVolume = audioAnalyzer.api.getAverage();
+    var averageVolume = getAverage();
 
     // Map the average volume to a strength value (0-1 scale)
     var strength = Math.min(1.0, Math.max(0.0, averageVolume)); // Clamped between 0 and 1
-
-    // Find the dominant frequency index
-    var maxBandValue = 0;
-    var dominantIndex = 0;
-    for (var i = 0; i < numBands; i++) {
-        if (bands[i] > maxBandValue) {
-            maxBandValue = bands[i];
-            dominantIndex = i;
-        }
-    }
-
-    // Map the dominant frequency index to a hue value (0-360 degrees)
-    var hue = (dominantIndex / numBands) * 360;
+    // Calculate the hue based on the center frequency (pitch)
+    var hue = melToNoteValue(bands, numBands);
 
     // Call the splat function with the calculated strength and hue
     splat(strength, hue);
